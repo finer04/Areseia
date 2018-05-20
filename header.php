@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="renderer" content="webkit">
+	<link rel="dns-prefetch" href="https://cdn.bootcss.com"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 	 <title><?php $this->archiveTitle(array(
             'category'  =>  _t('分类 %s 下的文章'),
@@ -25,7 +26,7 @@
 <body <?php if ( $this->is('post') ) echo ' class="single"' ?> >
 <div id="page">
 
-	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background: rgba(0, 0, 0, 0);">
+	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom" role="navigation" style="rgba(255, 255, 255, 0.6);">
 		<div class="container">
 		<a title="" class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,9 +43,14 @@
 		</div>	
 		</div>
     </nav>
-<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;">
+	<?php if($this->is('index')): ?>
+	<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;	background-size:2000px ;background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);">
+	</header>
+	
+	<?php endif;?>
 	
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>    
+<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;background-size:2000px; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
 
 <div class="container">
 	<div class="row">
@@ -59,6 +65,7 @@
 </div>
 </div>
 <?php endif;?>
+
 </header>
 		
 

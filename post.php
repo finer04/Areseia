@@ -1,10 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
 
-<style>
-.banner {background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);}
-</style>
-
 	<div class="col-xs-8 col-md-10 col-center-block">
     <section class="container">
 		<div class="post-content wow fadeIn" data-wow-delay="0.7s" itemprop="articleBody">

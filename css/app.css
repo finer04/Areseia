@@ -49,6 +49,12 @@ h1,h2,h3,h4,h5,h6,h7{
 	transform: translateY(-50%);
 }
 
+.navbar-custom{
+
+	transform: translate3d(0, 0, 0);
+	backface-visibility: hidden;
+}
+
 .post-header-meta h1{
 	color:white;
 	font-size: 50px;
@@ -82,7 +88,6 @@ h1,h2,h3,h4,h5,h6,h7{
 	top: 0;
 	width: 100%;
     background-position: top center;
-	background-size:135%; 
 	position: relative;
 	background-repeat: no-repeat;
     background-attachment: fixed;
@@ -273,13 +278,19 @@ pre code {
   	top: 0;
   	left: 0;
   	right: 0;
-  	transition: all .2s ease-in-out;
+  	transition: all .3s ease-in-out;
   }
   .headroom--unpinned {
   	top: -100px;
   }
   .headroom--pinned {
   	top: 0;
+	transition: background-color .3s;
+	background-color: rgba(255, 255, 255, .9);
+  }
+  
+  .headroom--top{
+	  background-color: rgba(255, 255, 255, .0);
   }
   
 @media (max-width:1024px) {
