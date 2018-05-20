@@ -9,6 +9,10 @@ html {
 * {box-sizing:border-box}
 body, html {padding:0; margin:0} 
 
+h1,h2,h3,h4,h5,h6,h7{
+	margin:5px 0;
+}
+
 ::-webkit-scrollbar-thumb:horizontal {
 	width: 5px;
 	background-color: #CCC;
@@ -47,31 +51,42 @@ body, html {padding:0; margin:0}
 
 .post-header-meta h1{
 	color:white;
-	font-weight:500;
-	text-shadow: 2px 2px 5px #888888;
+	font-size: 50px;
+	font-weight: 600;
 }
 
 .header-meta {
 	display: inline-table;
 	text-rendering: auto;
-		color:white;
-		text-shadow: 2px 2px 5px #888888;
+	color: #ffffff;
+    margin-top: 10px;
 }
 
-.header-meta p{
+.header-meta span{
+	height:100%;  
 	font-size:20px;
+	margin-right:10px;
+	vertical-align:middle; 
+	line-height:10px;
+}
+
+.header-meta img{
+	border-radius: 100%;
+	vertical-align:middle;
+	margin-top: -6px;
 }
 
 .banner{
 	padding-bottom: 80vh;
-	background-image: url('../img/cover.jpg');
+	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)), url('../img/cover.jpg');
 	top: 0;
 	width: 100%;
-    background-position:center center;  
+    background-position: top center;
 	background-size:135%; 
 	position: relative;
 	background-repeat: no-repeat;
     background-attachment: fixed;
+	filter: brightness(80%); 
 }
 
 .col-center-block {  
@@ -237,9 +252,44 @@ pre code {
 	border-radius: 0
 }
 
+.comment-list{
+	list-style:none;
+}
+
+.comment-list .avatar{
+	border-radius: 100%;
+	height:40px;
+	width:40px;
+	margin: 10px;
+}
+
+.comment-children{
+	margin-top:30px;
+}
+
+#comments h4{
+	margin:2rem 0;
+}
+
+@media (max-width:1024px) {
+	.banner{
+		background-position: top;
+		background-size: cover;
+	}
+|
+
 @media (max-width:600px) {
 	.banner{
-		background-position: center center;
-		    background-size: cover;
+		background-position: top;
+		background-size: cover;
+	}
+	
+	.post-header-meta h1{
+		font-size: 2.5rem;
+		white-space:normal; word-break:break-all;
+	}
+	
+	h1, h2 , h3 {
+		white-space:normal; word-break:break-all;
 	}
 }

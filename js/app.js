@@ -36,8 +36,18 @@ $(function (){
 new WOW().init();
 })
 
+$(document).ready(function(){
+	init();
+});
+
+function init(){  
 $(function (){
 	$( ".pagination a").wrap( "<li class='page-item'></li>" );
 	$( ".pagination a").addClass( "page-link" );
-	$( "img").addClass( "img-fluid rounded");
-});
+	$( "img").addClass( "img-fluid");
+	$( "table").wrap( "<div class='table-responsive'></div>" );
+	$("table").addClass("table table-hover");
+	$("thead").addClass("thead-light");
+	$("#comments p").addClass("mb-1");
+})
+}  
