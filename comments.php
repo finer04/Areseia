@@ -20,7 +20,8 @@
 </li>
 <?php } ?>
 
-<div id="comments" class="list-group responsesWrapper wow fadeIn" data-wow-delay="0.5s">
+<div id="comments" class="list-group responsesWrapper col-md-12 wow fadeIn" data-wow-delay="0.5s">
+	<div class="container">
 	<?php $this->comments()->to($comments); ?>
 	<?php if ($comments->have()): ?>
     <h4><?php $this->commentsNum(_t('暂无评论'), _t('仅有 1 条评论'), _t('已有 %d 条评论')); ?></h4>
@@ -31,6 +32,7 @@
 
     <h4 id="response">Leave a Reply</h4>
 <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" class="comment-form" role="form">
+
 <div class="container">
             <?php if($this->user->hasLogin()): ?>
     		<p><?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a></p>
@@ -63,9 +65,9 @@
                 <button type="submit" class="submit btn btn-primary btn-lg btn-block"><?php _e('提交评论'); ?></button>
             </div>
     	</form>
+		</div>
     </div>
-</div>
+
     <?php else: ?>
     <h3><?php _e('评论已关闭'); ?></h3>
     <?php endif; ?>
-</div>

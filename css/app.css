@@ -145,13 +145,7 @@ h1,h2,h3,h4,h5,h6,h7{
 	color:#4a4747;
 }
 
-.navbar {
-	position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    z-index: 1030;
-}
+
 
 .date {
     margin-top: 14px;
@@ -271,12 +265,29 @@ pre code {
 	margin:2rem 0;
 }
 
+.opaque {position:absolute; top:0; left:0; right:0; bottom:0; opacity:0; background:#d2d6f1;}
+.lt-ie9 .opaque {display:none;}
+
+  .headroom {
+  	position: fixed;
+  	top: 0;
+  	left: 0;
+  	right: 0;
+  	transition: all .2s ease-in-out;
+  }
+  .headroom--unpinned {
+  	top: -100px;
+  }
+  .headroom--pinned {
+  	top: 0;
+  }
+  
 @media (max-width:1024px) {
 	.banner{
 		background-position: top;
 		background-size: cover;
 	}
-|
+}
 
 @media (max-width:600px) {
 	.banner{

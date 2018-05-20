@@ -25,7 +25,7 @@
 <body <?php if ( $this->is('post') ) echo ' class="single"' ?> >
 <div id="page">
 
-	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark" role="navigation" style="background: rgba(0, 0, 0, 0);">
+	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="background: rgba(0, 0, 0, 0);">
 		<div class="container">
 		<a title="" class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">

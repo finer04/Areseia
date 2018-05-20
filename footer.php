@@ -10,11 +10,13 @@
 </div>
 <?php $this->footer(); ?>
 
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
-<script src="//cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/wow/1.1.2/wow.js"></script>
+<script src="https://cdn.bootcss.com/headroom/0.9.4/!!jQuery.headroom.min.js,headroom.min.js"></script>
+<script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
+
 
 <script>
 $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
