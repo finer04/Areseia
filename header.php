@@ -23,6 +23,7 @@
 </head>
 
 <body <?php if ( $this->is('post') ) echo ' class="single"' ?> >
+<div id="page">
 
 	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark" role="navigation" style="background: rgba(0, 0, 0, 0);">
 		<div class="container">
@@ -41,7 +42,7 @@
 		</div>	
 		</div>
     </nav>
-<header class="banner animated fadeIn" style="filter: blur(0px);opacity: 1;">
+<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;">
 	
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>    
 
@@ -49,19 +50,17 @@
 	<div class="row">
       <div class=" col-md-10 post-header-meta">
         <h1 class="display-3"><?php $this->title() ?></h1>
-         <div class="col-md-4 header-meta">
-		 <p class="lead"><?php $this->author(); ?></p>
-			<span class="text-muted"> <time><?php $this->date('F j, Y'); ?></time></span>
+         <div class="header-meta">
+		 <span><?php echo $this->author->gravatar(32);?></span>
+		 <span><?php $this->author(); ?></span>
+		 <span class="lead"> <time><?php $this->date('F j, Y'); ?></time></span>
           </div>
     </div>
 </div>
 </div>
 <?php endif;?>
 </header>
-	
-	
 		
-			
 
  <div class="main">
 	
