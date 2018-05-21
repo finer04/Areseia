@@ -26,7 +26,7 @@
 <body <?php if ( $this->is('post') ) echo ' class="single"' ?> >
 <div id="page">
 
-	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-light fixed-top navbar-custom" role="navigation" style="rgba(255, 255, 255, 0.6);">
+	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
 		<div class="container">
 		<a title="" class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,7 +44,7 @@
 		</div>
     </nav>
 	<?php if($this->is('index')): ?>
-	<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;	background-size:2000px ;background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);">
+	<header class="banner fadeIn brightness" style="filter: blur(0px) ;opacity: 1;	background-size:2000px ;background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);">
 	</header>
 	
 	<?php endif;?>

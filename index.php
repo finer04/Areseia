@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.0.0
+ * @version 1.0.8
  * @link https://fil.fi/
  */
 
@@ -16,12 +16,14 @@ $this->need('header.php');
             <article class="list wow fadeIn" itemscope itemtype="http://schema.org/BlogPosting" data-wow-duration="1s" data-wow-delay="0.3s">
 				<div class="row">
 					<div class="col-sm-12 col-xs-8 post-meta">
-					 <div class="post-left text-left">
+					 <div class="post-left float-left">
 					 <?php echo $this->author->gravatar(37);?>
 					<span><?php $this->author(); ?></small></span>
 					<span class="in"> in </span>
-					<span><?php $this->category(','); ?></span></div>
-					 <span class="text-right date"><p><?php $this->date('F j, Y'); ?> </p><span>
+					<span><?php $this->category(','); ?></span>
+					<span class="float-right date"><p><?php $this->date('Y/m/d'); ?> </p><span>
+					</div>
+					 
 					 </div>
 					</div>
 					<div class="row">

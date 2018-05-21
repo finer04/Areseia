@@ -6,7 +6,7 @@ html {
 	-ms-text-size-adjust: 100%
 }
 
-* {box-sizing:border-box}
+* {box-sizing:border-box;font-family: "Microsoft YaHei";}
 body, html {padding:0; margin:0} 
 
 h1,h2,h3,h4,h5,h6,h7{
@@ -91,7 +91,7 @@ h1,h2,h3,h4,h5,h6,h7{
 	position: relative;
 	background-repeat: no-repeat;
     background-attachment: fixed;
-	filter: brightness(80%); 
+	animation-duration: 0.3s;
 }
 
 .col-center-block {  
@@ -126,7 +126,7 @@ h1,h2,h3,h4,h5,h6,h7{
 	white-space:nowrap;
 	display:flex;
     display:-webkit-flex;
-    justify-content:flex-start;
+    justify-content:space-between;
 }
 
 .post-left{
@@ -139,18 +139,14 @@ h1,h2,h3,h4,h5,h6,h7{
     border-radius: 100%;
 	margin-right:15px;
 	margin-bottom: 10px;
-}
-
-.post-left span{
-	margin-top:5px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .article {
 	margin-top:3vh;
 	color:#4a4747;
 }
-
-
 
 .date {
     margin-top: 14px;
@@ -287,11 +283,20 @@ pre code {
   	top: 0;
 	transition: background-color .3s;
 	background-color: rgba(255, 255, 255, .9);
+	
   }
   
   .headroom--top{
 	  background-color: rgba(255, 255, 255, .0);
   }
+  
+.headroom--pinned  a{
+	  color: #000 !important;
+  }
+  
+ .headroom--top a{
+	 color: #fff !important;
+ }
   
 @media (max-width:1024px) {
 	.banner{
@@ -314,4 +319,6 @@ pre code {
 	h1, h2 , h3 {
 		white-space:normal; word-break:break-all;
 	}
+	
+
 }
