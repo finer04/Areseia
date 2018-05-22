@@ -64,7 +64,7 @@
          <div class="header-meta">
 		 <span><?php echo $this->author->gravatar(32);?></span>
 		 <span><?php $this->author(); ?></span>
-		 <span class="lead"> <time><?php $this->date('F j, Y'); ?></time></span>
+		 <span class="lead"> <time title="最后更新于：<?php echo date('Y 年 m 月 d 日', $this->modified);?>"><?php $this->date('F j, Y'); ?></time></span>
           </div>
     </div>
 </div>

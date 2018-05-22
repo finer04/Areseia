@@ -6,9 +6,12 @@ html {
 	-ms-text-size-adjust: 100%
 }
 
-* {box-sizing:border-box;font-family: "Microsoft YaHei";}
-body, html {padding:0; margin:0} 
+* {font-family: "Microsoft YaHei";}
 
+h1, h2 , h3 {
+	white-space:normal;
+	word-break:break-all;
+}
 
 ::-webkit-scrollbar-thumb:horizontal {
 	width: 5px;
@@ -44,12 +47,6 @@ body, html {padding:0; margin:0}
 	position: absolute;
 	top:50%;
 	transform: translateY(-50%);
-}
-
-.navbar-custom{
-
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
 }
 
 .post-header-meta h1{
@@ -156,7 +153,7 @@ body, html {padding:0; margin:0}
 	color: #C7C7C7;
     line-height: 20px;
 	align-items: center;
-	padding: 0 10px;
+	padding: 0 5px;
 }
 
 blockquote:after,blockquote:before,q:after,q:before {
@@ -225,7 +222,6 @@ pre:after {
 	content: "";
 }
 
-
 .bd-footer {
     font-size: 85%;
     background-color: #f7f7f7;
@@ -288,9 +284,6 @@ pre code {
 	border:none!important;
 }
 
-.opaque {position:absolute; top:0; left:0; right:0; bottom:0; opacity:0; background:#d2d6f1;}
-.lt-ie9 .opaque {display:none;}
-
   .headroom {
   	position: fixed;
   	top: 0;
@@ -305,7 +298,6 @@ pre code {
   	top: 0;
 	transition: background-color .3s;
 	background-color: rgba(255, 255, 255, .9);
-	
   }
   
   .headroom--top{
@@ -337,10 +329,4 @@ pre code {
 		font-size: 2.5rem;
 		white-space:normal; word-break:break-all;
 	}
-	
-	h1, h2 , h3 {
-		white-space:normal; word-break:break-all;
-	}
-	
-
 }
