@@ -1,15 +1,15 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php function threadedComments($comments, $options) {
-    $cl = $comments->levels > 0 ? 'comment-children' : 'list-group-item';
+    $cl = $comments->levels > 0 ? 'comment-children' : '';
     $author = $comments->url ? '<a href="' . $comments->url . '"'.'" target="_blank"' . ' rel="external">' . $comments->author . '</a>' : $comments->author;
 ?>
-<li id="li-<?php $comments->theId();?>" class="<?php echo $cl;?> list-group-item-action flex-column align-items-start">
+<li id="li-<?php $comments->theId();?>" class="<?php echo $cl;?> list-group-item">
 <div id="<?php $comments->theId(); ?>" class="d-flex w-100 justify-content-between">
 	
 <?php $a = 'https://cdn.v2ex.com/gravatar/' . md5(strtolower($comments->mail)) . '?s=80&r=X&d=mm';?>
     <h5 class="mb-1"><img class="avatar" src="<?php echo $a ?>" alt="<?php echo $comments->author; ?>" />
 	<?php echo $author ?></h5>
-	<small><?php $comments->reply(); ?></small>
+	<span class="small"><?php $comments->reply(); ?></span>
 </div>
    <?php $comments->content(); ?>
    <small> <?php $comments->date(); ?></small> 
@@ -67,6 +67,7 @@
     	</form>
 		</div>
     </div>
+
 
     <?php else: ?>
     <h3><?php _e('评论已关闭'); ?></h3>

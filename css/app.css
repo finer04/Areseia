@@ -9,9 +9,6 @@ html {
 * {box-sizing:border-box;font-family: "Microsoft YaHei";}
 body, html {padding:0; margin:0} 
 
-h1,h2,h3,h4,h5,h6,h7{
-	margin:5px 0;
-}
 
 ::-webkit-scrollbar-thumb:horizontal {
 	width: 5px;
@@ -130,9 +127,11 @@ h1,h2,h3,h4,h5,h6,h7{
 }
 
 .post-left{
-	display: inline-table;
+	display: flex;
 	text-rendering: auto;
 	width:100%;
+	align-items: center;
+	justify-content: flex-start;
 }
 
 .post-meta img {
@@ -156,6 +155,8 @@ h1,h2,h3,h4,h5,h6,h7{
 .in , .date {
 	color: #C7C7C7;
     line-height: 20px;
+	align-items: center;
+	padding: 0 10px;
 }
 
 blockquote:after,blockquote:before,q:after,q:before {
@@ -251,6 +252,19 @@ pre code {
 	border-radius: 0
 }
 
+.post-tag {
+	margin-top:30px;
+}
+
+.post-tag a{
+	padding:7px 10px;
+	margin-right:10px;
+}
+
+.post-tag a:hover{
+	text-decoration: none;
+}
+
 .comment-list{
 	list-style:none;
 }
@@ -268,6 +282,10 @@ pre code {
 
 #comments h4{
 	margin:2rem 0;
+}
+
+.comment-list li{
+	border:none!important;
 }
 
 .opaque {position:absolute; top:0; left:0; right:0; bottom:0; opacity:0; background:#d2d6f1;}

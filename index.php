@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.0.8
+ * @version 1.1.0
  * @link https://fil.fi/
  */
 
@@ -21,9 +21,9 @@ $this->need('header.php');
 					<span><?php $this->author(); ?></small></span>
 					<span class="in"> in </span>
 					<span><?php $this->category(','); ?></span>
-					<span class="float-right date"><p><?php $this->date('Y/m/d'); ?> </p><span>
+					
 					</div>
-					 
+					 <span class="float-right date"><p><?php $this->date('Y/m/d'); ?> </p></span>
 					 </div>
 					</div>
 					<div class="row">

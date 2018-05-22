@@ -38,7 +38,7 @@ new WOW().init();
 
 $(document).ready(function(){
 		$(".navbar").headroom();
-	init();
+		init();
 });
 
 function init(){  
@@ -49,7 +49,9 @@ $(function (){
 	$( "table").wrap( "<div class='table-responsive'></div>" );
 	$("table").addClass("table table-hover");
 	$("thead").addClass("thead-light");
+	$(".comment-list").addClass("list-group list-group-flush");
 	$("#comments p").addClass("mb-1");
 	$(".navbar").headroom();
+	$(".post-tag a").addClass("border border-primary rounded");
 })
 }  

@@ -7,7 +7,9 @@
             <?php $this->content(); ?>
         </div>
 	
-	
+	<div class="col-md-10 post-tag">
+		<?php $this->tags('', true, ''); ?>
+		</div>
 	<?php $this->need('comments.php'); ?>
 	</section>
 	</div>

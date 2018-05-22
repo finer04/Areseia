@@ -23,7 +23,7 @@
 <?php $this->header(); ?>
 </head>
 
-<body <?php if ( $this->is('post') ) echo ' class="single"' ?> >
+<body <?php if ( $this->is('post') ) echo ' class="post"' ?> >
 <div id="page">
 
 	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
@@ -50,7 +50,12 @@
 	<?php endif;?>
 	
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>    
-<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;background-size:2000px; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+	
+	<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
+<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;background-size:2000px; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+	<?php else: ?>
+	<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;background-size:2000px; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+	<?php endif; ?>
 
 <div class="container">
 	<div class="row">
