@@ -43,7 +43,7 @@
 		</div>	
 		</div>
     </nav>
-	<?php if($this->is('index')): ?>
+	<?php if($this->is('index') || $this->is('category') ): ?>
 	<header class="banner fadeIn brightness" style="filter: blur(0px) ;opacity: 1;	background-size:2000px ;background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);">
 	</header>
 	

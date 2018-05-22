@@ -162,6 +162,10 @@ blockquote:after,blockquote:before,q:after,q:before {
 	content: ""
 }
 
+blockquote p {
+	  text-indent: 0 !important;
+}
+
 .post-content img{
 	margin:1rem 0;
 }
