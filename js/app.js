@@ -1,12 +1,13 @@
 $(function(){
     zoom = $('.banner').css('background-size')
     zoom = parseFloat(zoom)/100
-    size = 2000;
+    size = 1700;
     $(window).on('scroll', function(){
       fromTop = $(window).scrollTop();
       newSize = size - (fromTop/3);
       if (newSize > $('.banner').width()) {
           $('.banner').css({
+			  'will-change': 'scroll-position',
               '-webkit-background-size': newSize,
               '-moz-background-size': newSize,
               '-o-background-size': newSize,
@@ -18,27 +19,15 @@ $(function(){
     });
 });
 
-$(function (){
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    var isSafari = /Safari/.test(navigator.userAgent) && /Apple Computer/.test(navigator.vendor);
 
-    if (isChrome || isSafari ) {
-    } else {
-        $('.banner').append('<div class="opaque"></div>');
-        $(window).on('scroll', function(){
-            var opacity = 0 + ($(window).scrollTop()/5000);
-            $('.opaque').css('opacity', opacity);
-        });
-    }
-});
 
 $(function (){
 new WOW().init();
 })
 
 $(document).ready(function(){
-		$(".navbar").headroom();
 		init();
+		$(".navbar").headroom();
 });
 
 function init(){  
@@ -55,3 +44,4 @@ $(function (){
 	$(".post-tag a").addClass("border border-primary rounded");
 })
 }  
+

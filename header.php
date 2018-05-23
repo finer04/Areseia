@@ -24,6 +24,7 @@
 </head>
 
 <body <?php if ( $this->is('post') ) echo ' class="post"' ?> >
+
 <div id="page">
 
 	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
@@ -43,38 +44,37 @@
 		</div>	
 		</div>
     </nav>
-	<?php if($this->is('index') || $this->is('category') ): ?>
-	<header class="banner fadeIn brightness" style="filter: blur(0px) ;opacity: 1;	background-size:2000px ;background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);">
-	</header>
 	
-	<?php endif;?>
 	
-	<?php if ( $this->is('post') || $this->is('page') ) : ?>    
-	
-	<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
-<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;background-size:2000px; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+	<?php if ( $this->is('post') || $this->is('page') ) : ?>   
+		<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
+	<header class="banner fadeIn" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+		<?php else: ?>
+		<header class="banner fadeIn" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+		<?php endif;?>	
+			<div class="container">
+			<div class="row">
+			  <div class=" col-md-10 post-header-meta">
+				<h1 class="display-3"><?php $this->title() ?></h1>
+				 <div class="header-meta">
+				 <span><?php echo $this->author->gravatar(32);?></span>
+				 <span><?php $this->author(); ?></span>
+				 <span class="lead"> <time title="最后更新于：<?php echo date('Y 年 m 月 d 日', $this->modified);?>"><?php $this->date('F j, Y'); ?></time></span>
+				  </div>
+			</div>
+		</div>
+		</div>
+		</header>
+		
 	<?php else: ?>
-	<header class="banner animated fadeIn brightness" style="filter: blur(0px) ;opacity: 1;background-size:2000px; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+	<header class="banner fadeIn" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
 	<?php endif; ?>
+	
 
-<div class="container">
-	<div class="row">
-      <div class=" col-md-10 post-header-meta">
-        <h1 class="display-3"><?php $this->title() ?></h1>
-         <div class="header-meta">
-		 <span><?php echo $this->author->gravatar(32);?></span>
-		 <span><?php $this->author(); ?></span>
-		 <span class="lead"> <time title="最后更新于：<?php echo date('Y 年 m 月 d 日', $this->modified);?>"><?php $this->date('F j, Y'); ?></time></span>
-          </div>
-    </div>
-</div>
-</div>
-<?php endif;?>
 
-</header>
+
 		
 
  <div class="main">
 	
-
 

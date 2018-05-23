@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.1.0
+ * @version 1.1.2
  * @link https://fil.fi/
  */
 
@@ -23,7 +23,7 @@ $this->need('header.php');
 					<span><?php $this->category(','); ?></span>
 					
 					</div>
-					 <span class="float-right date"><p><?php $this->date('Y/m/d'); ?> </p></span>
+					 <span class="float-right font-weight-light date"><p><?php $this->date('Y/m/d'); ?> </p></span>
 					 </div>
 					</div>
 					<div class="row">
@@ -63,7 +63,7 @@ $this->need('header.php');
         <?php endwhile; ?>
 		
 		<nav aria-label="Page">
-			<?php $this->pageNav('|<', '>|',3,'',array('wrapTag' => 'ul', 'wrapClass' => 'pagination pagination-lg justify-content-center','itemTag' => '','currentClass' => 'active',)); ?>
+			<?php $this->pageNav('|<', '>|',3,'',array('wrapTag' => 'ul', 'wrapClass' => 'pagination justify-content-center','itemTag' => '','currentClass' => 'active',)); ?>
 		</nav>
 		
     </section>

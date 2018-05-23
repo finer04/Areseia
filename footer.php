@@ -14,7 +14,8 @@
 <script src="https://cdn.bootcss.com/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
 <script src="https://cdn.bootcss.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="https://cdn.bootcss.com/wow/1.1.2/wow.js"></script>
-<script src="https://cdn.bootcss.com/headroom/0.9.4/!!jQuery.headroom.min.js,headroom.min.js"></script>
+<script async src="https://cdn.bootcss.com/headroom/0.9.4/!!jQuery.headroom.min.js,headroom.min.js"></script>
+<script src="https://cdn.bootcss.com/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
 
 
@@ -25,14 +26,15 @@ $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="
     timeout: 8000
 }).on('pjax:send',
 function() {
-
+	$( "#loading").fadeIn(300);
 }).on('pjax:complete',
 function() {
+	$( "#loading").fadeOut(600);
 	init();
 });
 </script>
 
-
+<div id="loading" ></div>
 
 </body>
 </html>
