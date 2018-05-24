@@ -18,7 +18,6 @@
 <script src="https://cdn.bootcss.com/smoothscroll/1.4.6/SmoothScroll.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
 
-
 <script>
 $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
     container: '#page',
@@ -30,9 +29,12 @@ function() {
 }).on('pjax:complete',
 function() {
 	$( "#loading").fadeOut(600);
+	bg();
 	init();
 });
 </script>
+
+
 
 <div id="loading" ></div>
 

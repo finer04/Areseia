@@ -1,3 +1,4 @@
+function bg(){  
 $(function(){
     zoom1 = $('.banner').css('background-size')
     zoom = parseFloat(zoom1)*5
@@ -19,7 +20,7 @@ $(function(){
       }
     });
 });
-
+}  
 
 
 $(function (){
@@ -27,6 +28,7 @@ new WOW().init();
 })
 
 $(document).ready(function(){
+		bg();
 		init();
 		$(".navbar").headroom();
 });
