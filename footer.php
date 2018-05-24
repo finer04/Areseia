@@ -29,7 +29,7 @@ function() {
 }).on('pjax:complete',
 function() {
 	$( "#loading").fadeOut(600);
-	bg();
+	$('.banner').css('background-size' , size );
 	init();
 });
 </script>
