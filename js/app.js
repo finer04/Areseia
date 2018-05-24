@@ -1,7 +1,8 @@
 $(function(){
-    zoom = $('.banner').css('background-size')
-    zoom = parseFloat(zoom)/100
-    size = 1700;
+    zoom1 = $('.banner').css('background-size')
+    zoom = parseFloat(zoom1)
+    size =  400 + $('.banner').width();
+	$('.banner').css('background-size' , size );
     $(window).on('scroll', function(){
       fromTop = $(window).scrollTop();
       newSize = size - (fromTop/3);
