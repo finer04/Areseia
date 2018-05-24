@@ -312,19 +312,12 @@ pre code {
  .headroom--top a{
 	 color: #fff !important;
  }
-  
-@media (max-width:1024px) {
-	.banner{
-		background-position: top;
-		background-size: cover;
-	}
-}
 
-@media (max-width:600px) {
-	.banner{
-		background-position: top;
-		background-size: cover;
-	}
+
+@media (max-width:768px) {
+.banner {
+padding-bottom: 50vh;}
+
 	
 	.post-header-meta h1{
 		font-size: 2.5rem;
