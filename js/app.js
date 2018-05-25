@@ -1,10 +1,11 @@
 function bg(){  
 $(function(){
-    zoom1 = $('.banner').css('background-size')
-    zoom = parseFloat(zoom1)*5
-    size =  zoom + $('.banner').width() ;
+    zoom1 = $('.banner').css('padding-bottom')
+	zoom2 = parseFloat(zoom1)
+	zoom = $('.banner').width()
+    size =  zoom + zoom2 * 2  ;
 	$('.banner').css('background-size' , size );
-    $(window).on('scroll', function(){
+    $(window).on('scroll', (function() {
       fromTop = $(window).scrollTop();
       newSize = size - (fromTop/3);
       if (newSize > $('.banner').width()) {
@@ -18,7 +19,7 @@ $(function(){
               'opacity': 1 - ((fromTop / $('html').height()) * 1.3)
           });
       }
-    });
+    }));
 });
 }  
 
