@@ -23,16 +23,15 @@ $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="
     timeout: 8000
 }).on('pjax:send',
 function() {
-	$( "#loading").fadeIn(300);
+	$("#loading").fadeIn(300);
 }).on('pjax:complete',
 function() {
-	$( "#loading").fadeOut(600);
 	$('.banner').css('background-size' , size );
 	init();
 });
 </script>
 
-<div id="loading" ></div>
+
 
 </body>
 </html>

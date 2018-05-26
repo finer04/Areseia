@@ -24,7 +24,7 @@
 </head>
 
 <body <?php if ( $this->is('post') ) echo ' class="post"' ?> >
-
+<div id="loading" ></div>
 <div id="page">
 
 	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
@@ -48,9 +48,9 @@
 	
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>   
 		<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
-	<header class="banner fadeIn" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+	<header class="banner" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
 		<?php else: ?>
-		<header class="banner fadeIn" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+		<header class="banner" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
 		<?php endif;?>	
 			<div class="container">
 			<div class="row">
@@ -67,13 +67,9 @@
 		</header>
 		
 	<?php else: ?>
-	<header class="banner fadeIn" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
+	<header class="banner" style="background-position: <?php if($this->options->bgpos): $this->options->bgpos(); else: "top center" ; endif; ?> ; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
 	<?php endif; ?>
-	
 
-
-
-		
 
  <div class="main">
 	
