@@ -79,15 +79,14 @@ h1, h2 , h3 {
 .banner{
 	padding-bottom: 80vh;
 	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15));
-	background-size: 110% 0;
+	background-size: 110% ;
 	top: 0;
 	width: 100%;
     background-position: top center;
 	position: relative;
 	background-repeat: no-repeat;
     background-attachment: fixed;
-	animation-duration: 0.5s;
-
+	animation-duration: 0.4s;
 }
 
 .col-center-block {  
@@ -123,6 +122,7 @@ h1, h2 , h3 {
 	display:flex;
     display:-webkit-flex;
     justify-content:space-between;
+	opacity: 0;
 }
 
 .post-left{
@@ -334,4 +334,8 @@ padding-bottom: 50vh;}
 	height: 100%;
 	background-color: #FFF;
 	z-index: 99999
+}
+
+.list .post-meta , .list h2 , .list .article {
+  opacity: 0;
 }

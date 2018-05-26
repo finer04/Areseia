@@ -11,8 +11,9 @@
 <?php $this->footer(); ?>
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
+<script src="https://cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
 <script src="<?php $this->options->themeUrl('js/optimized.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
 
 
 <script>

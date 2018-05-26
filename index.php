@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.1.6
+ * @version 1.1.8
  * @link https://fil.fi/
  */
 
@@ -13,9 +13,9 @@ $this->need('header.php');
 	<div class="col-xs-8 col-md-10 col-center-block">
     <section class="container">
         <?php while($this->next()): ?>
-            <article class="list wow fadeIn" itemscope itemtype="http://schema.org/BlogPosting" data-wow-duration="1s" data-wow-delay="0.3s">
+            <article class="list" itemscope itemtype="http://schema.org/BlogPosting" data-wow-duration="1s" data-wow-delay="0.3s">
 				<div class="row">
-					<div class="col-sm-12 col-lg-12 post-meta justify-content-between">
+					<div class="post-meta col-sm-12 col-lg-12 justify-content-between">
 					 <div class="post-left col-md-2">
 					 <?php echo $this->author->gravatar(37);?>
 					<span><?php $this->author(); ?></small></span>
