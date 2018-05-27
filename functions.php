@@ -21,7 +21,7 @@ function themeInit($archive)
 function showThumbnail($widget) {
 $options = Typecho_Widget::widget('Widget_Options');
 $attach = $widget->attachments(1)->attachment;
-$pattern = '/\<img.*?src\=\"(.*?)\"[^>]*>/i';
+$pattern = '/\<img.*?data-original\=\"(.*?)\"[^>]*>/i';
 $random = $options->backgroundImage;
 if (preg_match_all($pattern, $widget->content, $thumbUrl)) {
 echo $thumbUrl[1][0];
