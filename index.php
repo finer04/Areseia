@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.1.9
+ * @version 1.2.0
  * @link https://fil.fi/
  */
 
@@ -13,7 +13,7 @@ $this->need('header.php');
 	<div class="col-xs-8 col-md-10 col-center-block">
     <section class="container">
         <?php while($this->next()): ?>
-            <article class="list" itemscope itemtype="http://schema.org/BlogPosting" data-wow-duration="1s" data-wow-delay="0.3s">
+            <article class="list" itemscope itemtype="http://schema.org/BlogPosting">
 				<div class="row">
 					<div class="post-meta col-sm-12 col-lg-12 justify-content-between">
 					 <div class="post-left col-md-2">
@@ -52,7 +52,7 @@ $this->need('header.php');
                     {
                        echo $c.'...';
                     }
-                    echo '</br><p class="more"><u><a href="',$this->permalink(),'" title="',$this->title(),'">阅读全文...</a></u></p>';
+                    echo '<p class="more"><u><a href="',$this->permalink(),'" title="',$this->title(),'">阅读全文...</a></u></p>';
             }
         ?>
                 </div></div>

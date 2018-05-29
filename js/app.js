@@ -8,9 +8,9 @@ function inview(){
 			$.Velocity.hook($(this).find('.article'),'translateY','-10px');
 			$.Velocity.hook($(this).find('h2'),'translateY','-10px');
 			$.Velocity.hook($(this).find('.post-meta'),'translateY','-10px');
-			$(this).find('.post-meta').velocity({translateY:'0', opacity:'1'},{delay:300,duration:700,easing:'easeOutQuad',queue:false});
-			$(this).find('h2').velocity({translateY:'0', opacity:'1'},{delay:600,duration:700,easing:'easeOutQuad',queue:false});
-			$(this).find('.article').velocity({translateY:'0', opacity:'1'},{delay:700,duration:700,easing:'easeOutQuad',queue:false});
+			$(this).find('.post-meta').velocity({translateY:'0', opacity:'1'},{delay:300,duration:600,easing:'easeOutQuad',queue:false});
+			$(this).find('h2').velocity({translateY:'0', opacity:'1'},{delay:600,duration:600,easing:'easeOutQuad',queue:false});
+			$(this).find('.article').velocity({translateY:'0', opacity:'1'},{delay:700,duration:600,easing:'easeOutQuad',queue:false});
 			$(this).off();
 			});
 }
@@ -54,8 +54,27 @@ new WOW().init();
 //init
 $(document).ready(function(){
 		init();
-		$(".navbar").headroom();
 });
+
+//无限滚动
+function scrollload(){
+	var ias = jQuery.ias({
+	container:  '.main',    
+	item:       '.list',    
+	pagination: '.pagination',    
+	next:       '.next'    
+	});
+	 ias.extension(new IASTriggerExtension({
+			text: '加载更多', 
+			offset: 2, 
+			html: '<div class="col-md-12 d-flex justify-content-center"><div class="ias-trigger ias-trigger-next btn btn-outline-secondary text-center"><a>{text}</a></div></div>'
+		}));
+	ias.extension(new IASSpinnerExtension());  
+	ias.extension(new IASNoneLeftExtension({text: "已经没有文章了"}));    
+	 ias.on('rendered', function(items) {
+		 inview();
+	 })
+}
 
 //初始化
 function init(){  
@@ -72,6 +91,7 @@ function init(){
 	bg();
 	inview();
 	lazyload();
+	scrollload();
 	$("#loading").fadeOut(600);
 }  
 

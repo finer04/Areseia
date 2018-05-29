@@ -97,7 +97,7 @@ h1, h2 , h3 {
 }  
 
 .list {
-	padding-bottom:6vh;
+	padding-bottom:3vh;
 }
 
 .list small{
@@ -148,6 +148,7 @@ h1, h2 , h3 {
 
 .date {
     margin-top: 14px;
+	margin-right:10px;
 }
 
 .in , .date {
@@ -194,7 +195,7 @@ blockquote {
 	border-left: 5px solid rgba(62, 61, 61, 0.8);
 	font-weight: 400;
 	letter-spacing: .01rem;
-	margin: 30px 0;
+	margin: 13px 0;
 	padding-left: 20px
 }
 
