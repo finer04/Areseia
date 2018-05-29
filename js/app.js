@@ -17,35 +17,32 @@ function inview(){
 
 //背景图滚动虚化
 function bg(){  
-$(function(){
-    zoom1 = $('.banner').css('padding-bottom')
-	zoom2 = parseFloat(zoom1)
-	zoom = $('.banner').width()
+	var $b = $('#banner');
+    zoom1 = $b.css('padding-bottom');
+	zoom2 = parseFloat(zoom1);
+	zoom = $b.width();
     size =  zoom + zoom2 * 1.1  ;
-	$('.banner').css('background-size' , size );
+	$b.css('background-size' , size );
     $(window).on('scroll', (function() {
       fromTop = $(window).scrollTop();
       newSize = size - (fromTop/3);
       if (newSize > zoom2) {
-          $('.banner').css({
+          $b.css({
               'background-size': newSize,
               '-webkit-filter':'blur('+ 0 + (fromTop/100) + 'px)',
               'opacity': 1 - ((fromTop / zoom2) )
           });
       }
-	  
     }));
-});
+
 }  
 
 //lazyload
 function lazyload(){  
-$(function(){
 $("img[data-original]").one('inview', function(event, isInView) {
 	var $this = $(this);
 	$this.attr("src", $this.attr("data-original")).velocity("fadeIn",{duration:500});
 	$this.removeAttr("data-original");
-});
 });
 }
 
@@ -56,14 +53,12 @@ new WOW().init();
 
 //init
 $(document).ready(function(){
-		bg();
 		init();
 		$(".navbar").headroom();
 });
 
-//补全typecho做不到的事
+//初始化
 function init(){  
-$(function (){
 	$( ".pagination a").wrap( "<li class='page-item'></li>" );
 	$( ".pagination a").addClass( "page-link" );
 	$( "img").addClass( "img-fluid");
@@ -74,9 +69,9 @@ $(function (){
 	$("#comments p").addClass("mb-1");
 	$(".navbar").headroom();
 	$(".post-tag a").addClass("border border-primary rounded");
+	bg();
 	inview();
 	lazyload();
 	$("#loading").fadeOut(600);
-})
 }  
 

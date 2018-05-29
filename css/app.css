@@ -76,7 +76,7 @@ h1, h2 , h3 {
 	margin-top: -6px;
 }
 
-.banner{
+#banner{
 	padding-bottom: 80vh;
 	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15));
 	background-size: 110% ;
@@ -297,7 +297,7 @@ pre code {
   }
   .headroom--pinned {
   	top: 0;
-	transition: background-color .3s;
+	transition: all .3s ease-in-out;
 	background-color: rgba(255, 255, 255, .9);
   }
   
@@ -315,7 +315,7 @@ pre code {
 
 
 @media (max-width:768px) {
-.banner {
+#banner {
 padding-bottom: 50vh;}
 
 	

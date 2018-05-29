@@ -39,7 +39,7 @@ $this->need('header.php');
             else
             {    
                     $c=mb_substr($this->content, 0, 240, 'utf-8');
-                    $c=preg_replace("/<[img|IMG].*?src=[\'\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.png|\.tiff|\.bmp]))[\'|\"].*?[\/]?>/","",$c);
+                    $c=preg_replace("/<[img|IMG].*?data-original=[\'\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.png|\.tiff|\.bmp]))[\'|\"].*?[\/]?>/","",$c);
                     if(preg_match('/<pre>/',$c))
                     {
                        echo $c,'</code></pre>','...';;

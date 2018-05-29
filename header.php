@@ -48,9 +48,9 @@
 	
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>   
 		<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
-	<header class="banner" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+	<header id="banner" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
 		<?php else: ?>
-		<header class="banner" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+		<header id="banner" style="background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
 		<?php endif;?>	
 			<div class="container">
 			<div class="row">
@@ -67,7 +67,7 @@
 		</header>
 		
 	<?php else: ?>
-	<header class="banner" style="background-position: <?php if($this->options->bgpos): $this->options->bgpos(); else: "top center" ; endif; ?> ; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
+	<header id="banner" style="background-position: <?php if($this->options->bgpos): $this->options->bgpos(); else: "top center" ; endif; ?> ; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
 	<?php endif; ?>
 
 
