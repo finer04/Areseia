@@ -24,7 +24,7 @@ $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="
 }).on('pjax:send',
 function() {
 	$("#loading").fadeIn(300);
-}).on('pjax:complete',
+}).on('pjax:end',
 function() {
 	$('.banner').css('background-size' , size );
 	init();
