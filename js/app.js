@@ -18,14 +18,14 @@ function inview(){
 function bg(){  
 	var $b = $('#banner');
     zoom1 = $b.css('padding-bottom');
-	zoom2 = parseFloat(zoom1);
 	zoom = $b.width();
+	zoom2 = parseFloat(zoom1);
     size =  zoom + zoom2 * 1.1  ;
 	$b.css('background-size' , size );
     $(window).on('scroll', function() {
       fromTop = $(window).scrollTop();
       newSize = size - (fromTop/3);
-      if (newSize > zoom2) {
+      if (zoom2 > fromTop) {
           $b.css({
               'background-size': newSize,
               '-webkit-filter':'blur('+ 0 + (fromTop/100) + 'px)',
@@ -91,7 +91,7 @@ function init(){
 	inview();
 	lazyload();
 	scrollload();
-Toc.init({$nav: $('#toc')});
+	Toc.init({$nav: $('#toc')});
 	$("#loading").fadeOut(600);
 }  
 

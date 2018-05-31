@@ -26,7 +26,6 @@ function() {
 	$("#loading").fadeIn(300);
 }).on('pjax:end',
 function() {
-	$('.banner').css('background-size' , size );
 	init();
 });
 </script>
