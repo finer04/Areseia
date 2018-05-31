@@ -85,8 +85,8 @@ h1, h2 , h3 {
     background-position: top center;
 	position: relative;
 	background-repeat: no-repeat;
-    background-attachment: fixed;
-	animation-duration: 0.4s;
+	background-attachment:fixed;
+	overflow:scroll;
 }
 
 .col-center-block {  
