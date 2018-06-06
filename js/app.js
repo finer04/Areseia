@@ -30,9 +30,11 @@ function bg(){
               'background-size': newSize,
               '-webkit-filter':'blur('+ 0 + (fromTop/100) + 'px)',
               'opacity': 1 - ((fromTop / zoom2) )
-          });
-      }
+          });}
     });
+	$(window).resize(function() {
+		bg();
+	});
 }  
 
 //lazyload
