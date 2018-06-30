@@ -79,7 +79,7 @@ h1, h2 , h3 {
 #banner{
 	padding-bottom: 80vh;
 	background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15));
-	background-size: 110% ;
+	background-size: 110%;
 	top: 0;
 	width: 100%;
     background-position: top center;

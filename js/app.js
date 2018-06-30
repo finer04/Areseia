@@ -28,7 +28,6 @@ function bg(){
       if (zoom2 > fromTop) {
           $b.css({
               'background-size': newSize,
-              '-webkit-filter':'blur('+ 0 + (fromTop/100) + 'px)',
               'opacity': 1 - ((fromTop / zoom2) )
           });}
     });
