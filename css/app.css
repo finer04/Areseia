@@ -86,7 +86,6 @@ h1, h2 , h3 {
 	position: relative;
 	background-repeat: no-repeat;
 	background-attachment:fixed;
-	overflow:scroll;
 }
 
 .col-center-block {  

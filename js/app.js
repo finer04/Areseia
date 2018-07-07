@@ -4,7 +4,7 @@
 
 //velocity+inview控制动画
 function inview(){
-		$(".list").on('inview',function(event, isInView){
+		$(".ani").on('inview',function(event, isInView){
 			$.Velocity.hook($(this).find('.article'),'translateY','-10px');
 			$.Velocity.hook($(this).find('h2'),'translateY','-10px');
 			$.Velocity.hook($(this).find('.post-meta'),'translateY','-10px');
@@ -12,6 +12,7 @@ function inview(){
 			$(this).find('h2').velocity({translateY:'0', opacity:'1'},{delay:600,duration:600,easing:'easeOutQuad',queue:false});
 			$(this).find('.article').velocity({translateY:'0', opacity:'1'},{delay:700,duration:600,easing:'easeOutQuad',queue:false});
 			$(this).off();
+			$('.list').delay(700).removeClass('ani');
 			});
 }
 
@@ -46,9 +47,11 @@ $("img[data-original]").one('inview', function(event, isInView) {
 });
 }
 
-//init
-$(document).ready(function(){
-		init();
+$(function() {
+	Toc.init({$nav: $('#toc')});
+  $('body').scrollspy({
+    target: '#toc'
+  });
 });
 
 //无限滚动
@@ -76,11 +79,7 @@ function scrollload(){
 	 })
 }
 
-$(function() {
-  $('body').scrollspy({
-    target: '#toc'
-  });
-});
+
 
 //初始化
 function init(){  
@@ -98,7 +97,7 @@ function init(){
 	inview();
 	lazyload();
 	scrollload();
-	Toc.init({$nav: $('#toc')});
+
 	$("#loading").fadeOut(600);
 }  
 

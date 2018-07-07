@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.2.1.2
+ * @version 1.2.1.3
  * @link https://fil.fi/
  */
 
@@ -13,7 +13,7 @@ $this->need('header.php');
 	<div class="col-xs-8 col-md-10 col-center-block">
     <section class="container">
         <?php while($this->next()): ?>
-            <article class="list" itemscope itemtype="http://schema.org/BlogPosting">
+            <article class="list ani" itemscope itemtype="http://schema.org/BlogPosting">
 				<div class="row">
 					<div class="post-meta col-sm-12 col-lg-12 justify-content-between">
 					 <div class="post-left col-md-2">
