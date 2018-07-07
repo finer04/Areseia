@@ -1,6 +1,7 @@
 //jquery.inview 核心代码
 !function(a){"function"==typeof define&&define.amd?define(["jquery"],a):"object"==typeof exports?module.exports=a(require("jquery")):a(jQuery)}(function(a){function i(){var b,c,d={height:f.innerHeight,width:f.innerWidth};return d.height||(b=e.compatMode,(b||!a.support.boxModel)&&(c="CSS1Compat"===b?g:e.body,d={height:c.clientHeight,width:c.clientWidth})),d}function j(){return{top:f.pageYOffset||g.scrollTop||e.body.scrollTop,left:f.pageXOffset||g.scrollLeft||e.body.scrollLeft}}function k(){if(b.length){var e=0,f=a.map(b,function(a){var b=a.data.selector,c=a.$element;return b?c.find(b):c});for(c=c||i(),d=d||j();e<b.length;e++)if(a.contains(g,f[e][0])){var h=a(f[e]),k={height:h[0].offsetHeight,width:h[0].offsetWidth},l=h.offset(),m=h.data("inview");if(!d||!c)return;l.top+k.height>d.top&&l.top<d.top+c.height&&l.left+k.width>d.left&&l.left<d.left+c.width?m||h.data("inview",!0).trigger("inview",[!0]):m&&h.data("inview",!1).trigger("inview",[!1])}}}var c,d,h,b=[],e=document,f=window,g=e.documentElement;a.event.special.inview={add:function(c){b.push({data:c,$element:a(this),element:this}),!h&&b.length&&(h=setInterval(k,250))},remove:function(a){for(var c=0;c<b.length;c++){var d=b[c];if(d.element===this&&d.data.guid===a.guid){b.splice(c,1);break}}b.length||(clearInterval(h),h=null)}},a(f).on("scroll resize scrollstop",function(){c=d=null}),!g.addEventListener&&g.attachEvent&&g.attachEvent("onfocusin",function(){d=null})});
 
+
 //velocity+inview控制动画
 function inview(){
 		$(".list").on('inview',function(event, isInView){
@@ -63,8 +64,13 @@ function scrollload(){
 			offset: 2, 
 			html: '<div class="col-md-12 d-flex justify-content-center"><div class="ias-trigger ias-trigger-next btn btn-outline-secondary text-center"><a>{text}</a></div></div>'
 		}));
-	ias.extension(new IASSpinnerExtension());  
-	ias.extension(new IASNoneLeftExtension({text: "已经没有文章了"}));    
+	ias.extension(new IASSpinnerExtension({
+			html: '<div class="col-md-12 d-flex justify-content-center"><div class="ias-spinner text-center font-weight-light"><a>不要停下来啊...(指加载)</a></div></div>'
+	}));
+	ias.extension(new IASNoneLeftExtension({
+		text: "已经没有文章了",
+		html: '<div class="col-md-12 d-flex justify-content-center"><div class="ias-noneleft text-center font-weight-light"><a>{text}</a></div></div>',
+		}));    
 	 ias.on('rendered', function(items) {
 		 inview();
 	 })

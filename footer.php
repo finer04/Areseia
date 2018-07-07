@@ -12,23 +12,10 @@
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/velocity/1.2.3/velocity.min.js"></script>
+<script src="https://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
 <script src="<?php $this->options->themeUrl('js/optimized.js'); ?>"></script>
 <script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
-
-
-<script>
-$(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
-    container: '#page',
-    fragment: '#page',
-    timeout: 8000
-}).on('pjax:send',
-function() {
-	$("#loading").fadeIn(300);
-}).on('pjax:end',
-function() {
-	init();
-});
-</script>
+<script data-no-instant>InstantClick.init();</script>
 
 
 
