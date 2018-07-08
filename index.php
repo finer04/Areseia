@@ -15,7 +15,7 @@ $this->need('header.php');
         <?php while($this->next()): ?>
             <article class="list ani" itemscope itemtype="http://schema.org/BlogPosting">
 				<div class="row">
-					<div class="post-meta col-sm-12 col-lg-12 justify-content-between">
+					<div class="post-meta col-sm-12 col-lg-12 justify-content-between ani">
 					 <div class="post-left col-md-2">
 					 <?php echo $this->author->gravatar(37);?>
 					<span><?php $this->author(); ?></small></span>
@@ -27,10 +27,10 @@ $this->need('header.php');
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-					<h2 itemprop="headline"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2> 
+					<h2 class="ani" itemprop="headline"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2> 
 					</div></div>	
 						<div class="row">
-                <div class="col-md-12 article" itemprop="articleBody">
+                <div class="col-md-12 article ani" itemprop="articleBody">
                      <?php 
             if(preg_match('/<!--more-->/',$this->content)||mb_strlen($this->content, 'utf-8') < 270)
             {

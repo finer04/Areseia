@@ -8,11 +8,10 @@ function inview(){
 			$.Velocity.hook($(this).find('.article'),'translateY','-10px');
 			$.Velocity.hook($(this).find('h2'),'translateY','-10px');
 			$.Velocity.hook($(this).find('.post-meta'),'translateY','-10px');
-			$(this).find('.post-meta').velocity({translateY:'0', opacity:'1'},{delay:300,duration:600,easing:'easeOutQuad',queue:false});
-			$(this).find('h2').velocity({translateY:'0', opacity:'1'},{delay:600,duration:600,easing:'easeOutQuad',queue:false});
-			$(this).find('.article').velocity({translateY:'0', opacity:'1'},{delay:700,duration:600,easing:'easeOutQuad',queue:false});
+			$(this).find('.post-meta').velocity({translateY:'0', opacity:'1'},{delay:300,duration:600,easing:'easeOutQuad',queue:false}).removeClass('ani');
+			$(this).find('h2').velocity({translateY:'0', opacity:'1'},{delay:400,duration:600,easing:'easeOutQuad',queue:false}).removeClass('ani');
+			$(this).find('.article').velocity({translateY:'0', opacity:'1'},{delay:500,duration:600,easing:'easeOutQuad',queue:false}).removeClass('ani');
 			$(this).off();
-			$('.list').delay(700).removeClass('ani');
 			});
 }
 
