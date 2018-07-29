@@ -46,13 +46,6 @@ $("img[data-original]").one('inview', function(event, isInView) {
 });
 }
 
-$(function() {
-	Toc.init({$nav: $('#toc')});
-  $('body').scrollspy({
-    target: '#toc'
-  });
-});
-
 //无限滚动
 function scrollload(){
 	var ias = jQuery.ias({
@@ -96,7 +89,6 @@ function init(){
 	inview();
 	lazyload();
 	scrollload();
-
 	$("#loading").fadeOut(600);
 }  
 

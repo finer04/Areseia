@@ -24,13 +24,13 @@
 	<div class="container">
 	<?php $this->comments()->to($comments); ?>
 	<?php if ($comments->have()): ?>
-    <h4><?php $this->commentsNum(_t('暂无评论'), _t('仅有 1 条评论'), _t('已有 %d 条评论')); ?></h4>
+    <h4 data-toc-skip><?php $this->commentsNum(_t('暂无评论'), _t('仅有 1 条评论'), _t('已有 %d 条评论')); ?></h4>
     <?php $comments->listComments(); ?><?php $comments->pageNav('&laquo;', '&raquo;'); ?>
 <?php endif; ?>
 
 <?php if($this->allow('comment')): ?>
 
-    <h4 id="response">Leave a Reply</h4>
+    <h4 id="response" data-toc-skip>Leave a Reply</h4>
 <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" class="comment-form" role="form">
 
 <div class="container">

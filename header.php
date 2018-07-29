@@ -55,7 +55,7 @@
 			<div class="container">
 			<div class="row">
 			  <div class=" col-md-10 post-header-meta">
-				<h1 class="display-3"><?php $this->title() ?></h1>
+				<h1 class="display-3" data-toc-skip><?php $this->title() ?></h1>
 				 <div class="header-meta">
 				 <span><?php echo $this->author->gravatar(32);?></span>
 				 <span><?php $this->author(); ?></span>

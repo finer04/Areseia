@@ -18,7 +18,7 @@
 <script data-no-instant>
 InstantClick.on('change', function() {
   init();
-  
+  $('#toc').find("ul").remove();
 });
 InstantClick.init('mousedown');
 </script>

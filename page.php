@@ -3,7 +3,7 @@
 <section class="container">
 	<div class="row">
 		<div class="col-md-2">
-			<nav id="toc"  class="sticky-top tocs"><p class="lead">文章目录：</p></nav>
+			<nav id="toc"  class="sticky-top tocs" data-toggle="toc"><p class="lead">文章目录：</p></nav>
 		</div>
 
 	<div class="col-md-10">
