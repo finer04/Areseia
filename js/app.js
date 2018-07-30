@@ -46,11 +46,19 @@ $("img[data-original]").one('inview', function(event, isInView) {
 });
 }
 
+function ifnotoc(){
+	h = $('.post-content').find("h2").length;
+	if(h == 0){
+		$('#post').find('.col-md-2').remove();
+		$('#post').find('.col-md-10').attr('class','col-md-12');
+	}
+}
+
 //无限滚动
 function scrollload(){
 	var ias = jQuery.ias({
 	container:  '.main',    
-	item:       '.list',    
+	item:       'article',    
 	pagination: '.pagination',    
 	next:       '.next'    
 	});
@@ -71,24 +79,25 @@ function scrollload(){
 	 })
 }
 
-
-
 //初始化
 function init(){  
 	$( ".pagination a").wrap( "<li class='page-item'></li>" );
 	$( ".pagination a").addClass( "page-link" );
-	$( "img").addClass( "img-fluid");
+	$( "img").addClass( "img-fluid").attr({"data-toggle":"tooltip","data-placement":"bottom"});
+	$("input[title]").attr({"data-toggle":"tooltip","data-placement":"right"});
 	$( "table").wrap( "<div class='table-responsive'></div>" );
 	$("table").addClass("table table-hover");
 	$("thead").addClass("thead-light");
 	$(".comment-list").addClass("list-group list-group-flush");
 	$("#comments p").addClass("mb-1");
 	$(".navbar").headroom();
+	$('[data-toggle="tooltip"]').tooltip();
 	$(".post-tag a").addClass("border border-primary rounded");
 	bg();
 	inview();
 	lazyload();
 	scrollload();
+	ifnotoc();
 	$("#loading").fadeOut(600);
 }  
 

@@ -1,6 +1,6 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-<section class="container">
+<section class="container" id="post">
 	<div class="row">
 		<div class="col-md-2">
 			<nav id="toc"  class="sticky-top tocs" data-toggle="toc"><p class="lead">文章目录：</p></nav>

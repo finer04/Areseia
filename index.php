@@ -2,7 +2,7 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.2.1.3
+ * @version 1.2.2
  * @link https://fil.fi/
  */
 
