@@ -47,8 +47,9 @@ $("img[data-original]").one('inview', function(event, isInView) {
 }
 
 function ifnotoc(){
-	h = $('.post-content').find("h2").length;
-	if(h == 0){
+	h1 = $('.post-content').find("h1").length;
+	h2 = $('.post-content').find("h2").length;
+	if(h1 == 0 && h2 ==0 ){
 		$('#post').find('.col-md-2').remove();
 		$('#post').find('.col-md-10').attr('class','col-md-12');
 	}
