@@ -108,7 +108,11 @@ h1, h2 , h3 {
 }
 
 .list a:hover{
-	    text-decoration: none;
+	 text-decoration: none;
+}
+
+.more {
+	margin-top: 2.5em;
 }
 
 .main{
@@ -169,8 +173,17 @@ blockquote p {
 	margin:1rem 0;
 }
 
-.post-content p{
+.post-content p {
     text-indent: 1em;
+	color: #212529;
+}
+
+.post-content h2 {
+	margin: 1em 0;
+}
+
+.post-content h3 {
+	margin: 0.5em 0;
 }
 
 .post-content p , .post-content dd , .post-content ul , .post-content ol , .post-content pre , .post-content li {
@@ -342,6 +355,11 @@ pre code {
 
 .list .post-meta , .list h2 , .list .article {
   opacity: 0;
+}
+
+.list p{
+	color:#6d6d6d;
+	font-size: 15px;
 }
 
 .tocs {

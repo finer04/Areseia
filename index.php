@@ -52,7 +52,7 @@ $this->need('header.php');
                     {
                        echo $c.'...';
                     }
-                    echo '<p class="more"><u><a href="',$this->permalink(),'" title="',$this->title(),'">阅读全文...</a></u></p>';
+                    echo '<p class="more"><a href="',$this->permalink(),'" title="',$this->title(),'">阅读全文...</a></p>';
             }
         ?>
                 </div></div>
