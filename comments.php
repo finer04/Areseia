@@ -3,25 +3,29 @@
     $cl = $comments->levels > 0 ? 'comment-children' : '';
     $author = $comments->url ? '<a href="' . $comments->url . '"'.'" target="_blank"' . ' rel="external">' . $comments->author . '</a>' : $comments->author;
 ?>
-<li id="li-<?php $comments->theId();?>" class="<?php echo $cl;?> list-group-item">
-<div id="<?php $comments->theId(); ?>" class="d-flex w-100 justify-content-between">
-	
-<?php $a = 'https://cdn.v2ex.com/gravatar/' . md5(strtolower($comments->mail)) . '?s=80&r=X&d=mm';?>
-    <h5 class="mb-1"><img class="avatar" src="<?php echo $a ?>" alt="<?php echo $comments->author; ?>" />
-	<?php echo $author ?></h5>
-	<span class="small"><?php $comments->reply(); ?></span>
-</div>
-   <?php $comments->content(); ?>
-   <small> <?php $comments->date(); ?></small> 
-    
-	
-<?php if ($comments->children){ ?><div class="children"><?php $comments->threadedComments($options); ?></div><?php } ?>
+<div id="li-<?php $comments->theId();?>" class="<?php echo $cl;?> card border-secondary mb-2 border-light shadow-sm mb-5 bg-white rounded " style="max-width:53rem;">
+  <div id="<?php $comments->theId(); ?>" class="card-header d-flex w-100 justify-content-between">
 
+    <div class="lead w-50"><?php $a = 'https://cdn.v2ex.com/gravatar/' . md5(strtolower($comments->mail)) . '?s=80&r=X&d=mm';?>
+    <img class="avatar float-left m-2" src="<?php echo $a ?>" alt="<?php echo $comments->author; ?>" />
+    <span><small><?php echo $author ?> </small></span>
+    <span class="lead blockquote-footer"><small> <?php $comments->date(); ?></small></span>
+  </div>
+	<span class="small" style="margin: 1rem;"><?php $comments->reply(); ?></span>
+  </div>
+
+<div class="card-body">
+  <p class="card-text"> <?php $comments->content(); ?></p>
+</div>
+
+
+<?php if ($comments->children){ ?><div class="children"><?php $comments->threadedComments($options); ?></div><?php } ?>
+</div>
 </li>
 <?php } ?>
 
-<div id="comments" class="list-group responsesWrapper col-md-12 wow fadeIn" data-wow-delay="0.5s">
-	<div class="container">
+<div id="comments" class="list-group responsesWrapper col-md-12 wow fadeIn" >
+	<div class="container-fluld">
 	<?php $this->comments()->to($comments); ?>
 	<?php if ($comments->have()): ?>
     <h4 data-toc-skip><?php $this->commentsNum(_t('暂无评论'), _t('仅有 1 条评论'), _t('已有 %d 条评论')); ?></h4>
@@ -30,7 +34,8 @@
 
 <?php if($this->allow('comment')): ?>
 
-    <h4 id="response" data-toc-skip>Leave a Reply</h4>
+
+    <h4 id="response" data-toc-skip>发表评论</h4>
 <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" class="comment-form" role="form">
 
 <div class="container">
@@ -61,7 +66,7 @@
                 <textarea rows="8" name="text" id="textarea" class="form-control" placeholder="Write something..." required ><?php $this->remember('text'); ?></textarea>
             </p>
 			 </div>
-    		
+
                 <button type="submit" class="submit btn btn-primary btn-lg btn-block"><?php _e('提交评论'); ?></button>
             </div>
     	</form>

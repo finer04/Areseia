@@ -12,8 +12,9 @@
 
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" data-no-instant></script>
-<script src="<?php $this->options->themeUrl('js/optimized.js'); ?>" ></script>
-<script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
+<script src="https://cdn.bootcss.com/instantclick/3.0.1/instantclick.min.js" data-no-instant></script>
+<script src="<?php $this->options->themeUrl('js/optimized.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/app.min.js'); ?>"></script>
 <script data-no-instant>
 InstantClick.on('change', function() {
   init();

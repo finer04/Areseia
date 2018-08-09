@@ -18,7 +18,7 @@
 <!-- 引入前端资源 -->
 	<link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="<?php $this->options->themeUrl('css/app.css'); ?>" rel="stylesheet">
-	
+
 <!-- 导航栏 -->
 <?php $this->header(); ?>
 </head>
@@ -41,17 +41,17 @@
                 <li class="nav-item active<?php if($this->is('category', $category->slug)): ?> <?php endif; ?>"><a class="nav-link" href="<?php $category->permalink(); ?>" title="<?php $category->name(); ?>"><?php $category->name(); ?></a></li>
             <?php endwhile; ?>
         </ul>
-		</div>	
+		</div>
 		</div>
     </nav>
-	
-	
-	<?php if ( $this->is('post') || $this->is('page') ) : ?>   
+
+
+	<?php if ( $this->is('post') || $this->is('page') ) : ?>
 		<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
 	<header id="banner" style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
 		<?php else: ?>
 		<header id="banner" style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
-		<?php endif;?>	
+		<?php endif;?>
 			<div class="container">
 			<div class="row">
 			  <div class=" col-md-10 post-header-meta">
@@ -59,18 +59,16 @@
 				 <div class="header-meta">
 				 <span><?php echo $this->author->gravatar(32);?></span>
 				 <span><?php $this->author(); ?></span>
-				 <span class="lead"> <time data-toggle="tooltip" data-placement="right" title="Last Update: <?php echo date('F j, Y', $this->modified);?>"><?php $this->date('F j, Y'); ?></time></span>
+				 <span class="lead"> <time data-toggle="tooltip" data-placement="bottom" title="Last Update: <?php echo date('F j, Y', $this->modified);?>"><?php $this->date('F j, Y'); ?></time></span>
+				 <span class="lead"><?php echo art_count($this->cid); ?> 字</span>
 				  </div>
 			</div>
 		</div>
 		</div>
 		</header>
-		
 	<?php else: ?>
 	<header id="banner" style="background-position: <?php if($this->options->bgpos): $this->options->bgpos(); else: "top center" ; endif; ?> ; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
 	<?php endif; ?>
 
 
- <div class="main">
-	
-
+ <div class="main mt-4">

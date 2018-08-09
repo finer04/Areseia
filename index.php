@@ -2,14 +2,13 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.2.2
+ * @version 1.2.5
  * @link https://fil.fi/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-
 	<div class="col-xs-8 col-md-10 col-center-block">
     <section class="container">
         <?php while($this->next()): ?>
@@ -27,17 +26,17 @@ $this->need('header.php');
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-					<h2 class="ani" itemprop="headline"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2> 
-					</div></div>	
+					<h2 class="ani" itemprop="headline"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+					</div></div>
 						<div class="row">
                 <div class="col-md-12 article ani" itemprop="articleBody">
-                     <?php 
+                     <?php
             if(preg_match('/<!--more-->/',$this->content)||mb_strlen($this->content, 'utf-8') < 270)
             {
                 $this->content('阅读全文...');
             }
             else
-            {    
+            {
                     $c=mb_substr($this->content, 0, 240, 'utf-8');
                     $c=preg_replace("/<[img|IMG].*?data-original=[\'\"](.*?(?:[\.gif|\.jpg|\.jpeg|\.png|\.tiff|\.bmp]))[\'|\"].*?[\/]?>/","",$c);
                     if(preg_match('/<pre>/',$c))
@@ -57,17 +56,16 @@ $this->need('header.php');
         ?>
                 </div></div>
 				<div class="row">
-                </div>				
+                </div>
             </article>
         <?php endwhile; ?>
-		
+
 		<nav aria-label="Page">
-			<?php $this->pageNav('|<', '>|',3,'',array('wrapTag' => 'ul', 'wrapClass' => 'pagination justify-content-center','itemTag' => '','currentClass' => 'active',)); ?>
+			<?php $this->pageNav('上一页', '下一页',3,'',array('wrapTag' => 'ul', 'wrapClass' => 'pagination justify-content-center','itemTag' => '','currentClass' => 'active',)); ?>
 		</nav>
-		
+
     </section>
 	</div>
 
 
 <?php $this->need('footer.php'); ?>
-

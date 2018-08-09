@@ -2,8 +2,11 @@
 <?php $this->need('header.php'); ?>
 <div class="container" id="post">
 	<div class="row">
-		<div class="col-md-2">
-			<nav id="toc"  class="sticky-top tocs" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
+		<div class="col-md-2 mt-3">
+			<nav id="toc"  class="tocs  d-none d-sm-block sticky-top" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
+			<div class="scrolltop d-none d-sm-block sticky-top">
+				<button type="button" class="btn btn-outline-dark" id="scroll-top"><span>▲ Top</span> </button>
+			</div>
 		</div>
 
 	<div class="col-md-10">
@@ -19,4 +22,13 @@
 	</div>
 </div>
 	</div>
+
+	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="lightbox" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+	  <div class="modal-dialog img-box" style="max-width:65rem;">
+	    <div class="modal-content">
+
+	    </div>
+	  </div>
+	</div>
+
 <?php $this->need('footer.php'); ?>
