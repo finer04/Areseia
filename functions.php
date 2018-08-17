@@ -5,8 +5,20 @@ function themeConfig($form) {
     $backgroundImage = new Typecho_Widget_Helper_Form_Element_Text('backgroundImage', NULL, NULL, _t('顶部默认背景图像'), _t('请输入背景图片地址'));
     $form->addInput($backgroundImage);
 
+
 	$bgpos= new Typecho_Widget_Helper_Form_Element_Text('bgpos', NULL, NULL, _t('定位首页顶部背景图像'), _t('请输入首页顶部背景图的定位，格式要跟 background-position 一样，如果为空就使用主题默认的 "top center"'));
     $form->addInput($bgpos);
+
+    $usesmooth = new Typecho_Widget_Helper_Form_Element_Radio('usesmooth',
+        array('0' => _t('不使用'),
+            '1' => _t('使用')),
+        '1', _t('是否使用平滑滚动（SmoothScroll）？'));
+    $form->addInput($usesmooth);
+
+        $tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL, NULL, _t('统计代码'), _t('请输入你的统计代码，或者其他 Javascript 代码'));
+        $form->addInput($tongji);
+
+
 }
 
 function themeInit($archive)
