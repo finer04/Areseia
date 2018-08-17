@@ -28,12 +28,12 @@
 <div id="page">
 
 	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
-		<div class="container">
-		<a title="" class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
+		<div class="container-fluid">
+		<a title="" class="navbar-brand offset-xl-1" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="navbarResponsive">
+		<div class="collapse navbar-collapse offset-xl-right-1" id="navbarResponsive">
         <ul id="menu" class="navbar-nav ml-auto">
             <li class="nav-item active<?php if($this->is('index')): ?> <?php endif; ?>"> <a class="nav-link" href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
             <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>

@@ -78,6 +78,7 @@ function inview() {
   $(".ani").one('inview', function(event, isInView) {
     $.Velocity.hook($(this).find('.article'), 'translateY', '-10px');
     $.Velocity.hook($(this).find('h2'), 'translateY', '-10px');
+    $.Velocity.hook($(this).find('.mobile-date'), 'translateY', '-10px');
     $.Velocity.hook($(this).find('.post-meta'), 'translateY', '-10px');
     $(this).find('.post-meta').velocity({
       translateY: '0',
@@ -89,6 +90,15 @@ function inview() {
       queue: false
     }).removeClass('ani');
     $(this).find('h2').velocity({
+      translateY: '0',
+      opacity: '1'
+    }, {
+      delay: 400,
+      duration: 500,
+      easing: 'easeOutSine',
+      queue: false
+    }).removeClass('ani');
+    $(this).find('.mobile-date').velocity({
       translateY: '0',
       opacity: '1'
     }, {

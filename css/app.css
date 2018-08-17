@@ -417,7 +417,7 @@ pre code {
   z-index: 99999
 }
 
-.list .post-meta, .list h2, .list .article {
+.list .post-meta, .list h2, .list .article,.list .mobile-date {
   opacity: 0;
 }
 
@@ -474,4 +474,17 @@ nav[data-toggle=toc] .nav .nav>li>.active, nav[data-toggle=toc] .nav .nav>li>.ac
 
 nav[data-toggle=toc] .nav-link.active+ul {
   display: block
+}
+
+
+@media (min-width: 1200px){
+.offset-xl-right-1 {
+    margin-right: 8.333333%;
+}
+}
+
+@media (min-width: 2560px){
+#banner {
+    padding: 25rem 0;
+}
 }

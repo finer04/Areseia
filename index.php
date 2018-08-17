@@ -20,14 +20,15 @@ $this->need('header.php');
 					<span><?php $this->author(); ?></small></span>
 					<span class="in"> in </span>
 					<span><?php $this->category(','); ?></span>
-					<span class="pl-2"> <?php $this->commentsNum(_t(' 暂无评论'), _t(' 只有 1 条评论'), _t('有 %d 条评论')); ?></span>
+					<span class="pl-2 d-none d-sm-block"> <?php $this->commentsNum(_t(' 暂无评论'), _t(' 只有 1 条评论'), _t('有 %d 条评论')); ?></span>
 					</div>
-					 <span class="col-md-auto date mt-1"><?php $this->date('F j, Y'); ?></span>
+					 <span class="col-md-auto date d-none d-sm-block mt-1"><?php $this->date('F j, Y'); ?></span>
 					 </div>
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
 					<h2 class="ani" itemprop="headline"><a href="<?php $this->permalink() ?>"><?php $this->title() ?></a></h2>
+					<span class="ani d-block d-sm-none mobile-date"><?php $this->date('F j, Y'); ?></span>
 					</div></div>
 						<div class="row">
                 <div class="col-md-12 article ani" itemprop="articleBody">
