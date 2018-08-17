@@ -94,6 +94,7 @@ h1, h2, h3 {
   background-attachment: fixed;
 }
 
+
 .col-center-block {
   float: none;
   display: block;
@@ -128,6 +129,7 @@ h1, h2, h3 {
   display: -webkit-flex;
   justify-content: space-between;
   opacity: 0;
+  vertical-align: bottom;
 }
 
 .post-left {
@@ -151,13 +153,12 @@ h1, h2, h3 {
   color: #4a4747;
 }
 
-.date {
-  margin-top: 14px;
-  margin-right: 10px;
+.post-meta .date {
+  font-size:13px;
+  color: #C7C7C7;
 }
 
-.in, .date {
-  color: #C7C7C7;
+.post-meta .in {
   line-height: 20px;
   align-items: center;
   padding: 0 5px;

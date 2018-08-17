@@ -2,26 +2,27 @@
 /**
  * @package Areseia
  * @author Finer04
- * @version 1.2.5
+ * @version 1.2.6
  * @link https://fil.fi/
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 $this->need('header.php');
 ?>
-	<div class="col-xs-8 col-md-10 col-center-block">
-    <section class="container">
+	<div class="col-xl-10 col-md-10 col-center-block">
+    <section class="container-fluid">
         <?php while($this->next()): ?>
             <article class="list ani" itemscope itemtype="http://schema.org/BlogPosting">
 				<div class="row">
-					<div class="post-meta col-sm-12 col-lg-12 justify-content-between ani">
-					 <div class="post-left col-md-2">
+					<div class="post-meta col-sm-12 col-lg-12 justify-content-between ani align-items-center">
+					 <div class="post-left col-md-6 d-flex align-items-center">
 					 <?php echo $this->author->gravatar(37);?>
 					<span><?php $this->author(); ?></small></span>
 					<span class="in"> in </span>
 					<span><?php $this->category(','); ?></span>
+					<span class="pl-2"> <?php $this->commentsNum(_t(' 暂无评论'), _t(' 只有 1 条评论'), _t('有 %d 条评论')); ?></span>
 					</div>
-					 <span class="col-md-auto font-weight-light date"><p class="text-right"><?php $this->date('Y/m/d'); ?> </p></span>
+					 <span class="col-md-auto date mt-1"><?php $this->date('F j, Y'); ?></span>
 					 </div>
 					</div>
 					<div class="row">

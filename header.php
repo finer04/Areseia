@@ -27,7 +27,7 @@
 <div id="loading" ></div>
 <div id="page">
 
-	 <nav id="nav-menu" class="navbar navbar-expand-lg navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
+	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
 		<div class="container">
 		<a title="" class="navbar-brand" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
@@ -48,9 +48,9 @@
 
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>
 		<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
-	<header id="banner" style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+	<header id="banner" class="shadow-sm" style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
 		<?php else: ?>
-		<header id="banner" style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+		<header id="banner" class="shadow"  style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
 		<?php endif;?>
 			<div class="container">
 			<div class="row">
@@ -67,7 +67,7 @@
 		</div>
 		</header>
 	<?php else: ?>
-	<header id="banner" style="background-position: <?php if($this->options->bgpos): $this->options->bgpos(); else: "top center" ; endif; ?> ; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
+	<header id="banner" class="shadow-sm" style="background-position: <?php if($this->options->bgpos): $this->options->bgpos(); else: "top center" ; endif; ?> ; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->options->backgroundImage(); ?>);"></header>
 	<?php endif; ?>
 
 

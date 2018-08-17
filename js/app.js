@@ -75,7 +75,7 @@
 
 //velocity+inview控制动画
 function inview() {
-  $(".ani").on('inview', function(event, isInView) {
+  $(".ani").one('inview', function(event, isInView) {
     $.Velocity.hook($(this).find('.article'), 'translateY', '-10px');
     $.Velocity.hook($(this).find('h2'), 'translateY', '-10px');
     $.Velocity.hook($(this).find('.post-meta'), 'translateY', '-10px');
@@ -93,8 +93,8 @@ function inview() {
       opacity: '1'
     }, {
       delay: 400,
-      duration: 600,
-      easing: 'easeOutQuad',
+      duration: 500,
+      easing: 'easeOutSine',
       queue: false
     }).removeClass('ani');
     $(this).find('.article').velocity({
@@ -102,8 +102,8 @@ function inview() {
       opacity: '1'
     }, {
       delay: 500,
-      duration: 600,
-      easing: 'easeOutQuad',
+      duration: 550,
+      easing: 'easeOutSine',
       queue: false
     }).removeClass('ani');
     $(this).off();
@@ -135,7 +135,7 @@ function bg() {
   });
 }
 
-//lazyload
+//inview + lazyload
 function lazyload() {
   $("img[data-original]").one('inview', function(event, isInView) {
     var $this = $(this);
@@ -146,6 +146,7 @@ function lazyload() {
   });
 }
 
+  //检查文章页是否有h1/h2标签，如果没有则不调用文章目录
 function ifnotoc() {
   h1 = $('.post-content').find("h1").length;
   h2 = $('.post-content').find("h2").length;
@@ -164,39 +165,50 @@ $('#scroll-top').click(function() {
 
 //model版lightbox
 $('.post-content img').click(function() {
-    img = $(this).attr("src");
-    $('<img>', {
-      src : img,
-      class : 'img-fluld',
-      onclick : "$('#lightbox').modal('hide');",
-    }).appendTo(".modal-content");
-    $('#lightbox').modal();
+  img = $(this).attr("src");
+  $('<img>', {
+    src: img,
+    class: 'img-fluld',
+    onclick: "$('#lightbox').modal('hide');",
+  }).appendTo(".modal-content");
+  $('#lightbox').modal();
 })
 
-$('#lightbox').on('hidden.bs.modal', function (e) {
-    $('.modal-content').empty();
+$('#lightbox').on('hidden.bs.modal', function(e) {
+  $('.modal-content').empty();
 })
 
 //初始化
 function init() {
-  $(".pagination a").wrap("<li class='page-item'></li>");
-  $(".pagination a").addClass("page-link");
+  //解决 typecho 的页码适应bootstrap问题
+  var pageination = $(".pagination a");
+  pageination.wrap("<li class='page-item'></li>");
+  pageination.addClass("page-link");
+  //给文章图片和输入框加入响应式和tooltip
   $("img").addClass("img-fluid").attr({
     "data-toggle": "tooltip",
     "data-placement": "bottom"
   });
-  $(".post-content img").unwrap().addClass('img-thumbnail shadow-sm');
   $("input[title]").attr({
     "data-toggle": "tooltip",
     "data-placement": "right"
   });
+  $('[data-toggle="tooltip"]').tooltip();
+  //解决 typecho 给文章图片加<p>元素导致排版问题，并修复图片下一行的文字的排版问题
+  $(".post-content img").addClass('img-thumbnail shadow-sm').unwrap();
+  $('.post-content').contents().filter(function() {
+    return this.nodeType == Node.TEXT_NODE;
+  }).wrap('<p></p>');
+  //解决 typecho 的表格样式问题
   $("table").wrap("<div class='table-responsive'></div>");
   $("table").addClass("table table-hover");
   $("thead").addClass("thead-light");
+  //适应评论区的样式表
   $(".comment-list").addClass("list-group list-group-flush");
   $("#comments p").addClass("mb-1");
+  //给导航栏调用headroom
   $(".navbar").headroom();
-  $('[data-toggle="tooltip"]').tooltip();
+  //自定义标签样式
   $(".post-tag a").addClass("border border-primary rounded");
   bg();
   inview();
