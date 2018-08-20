@@ -27,7 +27,7 @@
 <div id="loading" ></div>
 <div id="page">
 
-	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation" style="rgba(255, 255, 255, 0.6);">
+	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation">
 		<div class="container-fluid">
 		<a title="" class="navbar-brand offset-xl-1" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
@@ -54,7 +54,7 @@
 		<?php endif;?>
 			<div class="container">
 			<div class="row">
-			  <div class=" col-md-10 post-header-meta">
+			  <div class=" col-md-8 post-header-meta">
 				<h1 class="display-3" data-toc-skip><?php $this->title() ?></h1>
 				 <div class="header-meta">
 				 <span><?php echo $this->author->gravatar(32);?></span>

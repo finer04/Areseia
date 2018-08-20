@@ -240,6 +240,7 @@ pre:after {
 }
 
 .scrolltop {
+  visibility: hidden;
   top: 38rem;
   text-align: left;
   padding-right: 0 !important;

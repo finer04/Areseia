@@ -131,6 +131,12 @@ function bg() {
   $(window).on('scroll', function() {
     fromTop = $(window).scrollTop();
     newSize = size - (fromTop / 3);
+    if(fromTop > 1200){
+      $('.scrolltop').css("visibility","visible");
+    } else {
+      $('.scrolltop').css("visibility","hidden");
+    }
+
     if (fromTop < 600) {
       if (zoom2 > fromTop) {
         $b.css({
@@ -156,7 +162,7 @@ function lazyload() {
   });
 }
 
-  //检查文章页是否有h1/h2标签，如果没有则不调用文章目录
+//检查文章页是否有h1/h2标签，如果没有则不调用文章目录
 function ifnotoc() {
   h1 = $('.post-content').find("h1").length;
   h2 = $('.post-content').find("h2").length;
@@ -216,7 +222,6 @@ function init() {
   //适应评论区的样式表
   $(".comment-list").addClass("list-group list-group-flush");
   $("#comments p").addClass("mb-1");
-  //给导航栏调用headroom
   $(".navbar").headroom();
   //自定义标签样式
   $(".post-tag a").addClass("border border-primary rounded");
