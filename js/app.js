@@ -122,19 +122,21 @@ function inview() {
 
 //背景图滚动虚化
 function bg() {
+  var $scrolltop = $('#scroll-top');
   var $b = $('#banner');
   zoom1 = $b.css('padding-bottom');
   zoom = $b.width();
   zoom2 = parseFloat(zoom1);
   size = zoom + zoom2 * 1.1;
+
   $b.css('background-size', size);
   $(window).on('scroll', function() {
     fromTop = $(window).scrollTop();
     newSize = size - (fromTop / 3);
-    if(fromTop > 1200){
-      $('.scrolltop').css("visibility","visible");
+    if (fromTop > 600) {
+      $scrolltop.removeClass("fadeOut").addClass('fadeIn').show(100);
     } else {
-      $('.scrolltop').css("visibility","hidden");
+      $scrolltop.removeClass("fadeIn").addClass('fadeOut').hide(1000);
     }
 
     if (fromTop < 600) {
@@ -167,8 +169,10 @@ function ifnotoc() {
   h1 = $('.post-content').find("h1").length;
   h2 = $('.post-content').find("h2").length;
   if (h1 == 0 && h2 == 0) {
-    $('#post').find('.col-md-2').remove();
-    $('#post').find('.col-md-10').attr('class', 'col-md-12');
+    if ($("#post").length != 0 || $("#page").length != 0) {
+      $("#post-left").remove();
+      $('.post-content section').attr('class', 'container');
+    }
   }
 }
 
@@ -200,7 +204,8 @@ function init() {
   var pageination = $(".pagination a");
   pageination.wrap("<li class='page-item'></li>");
   pageination.addClass("page-link");
-  //给文章图片和输入框加入响应式和tooltip
+
+
   $("img").addClass("img-fluid").attr({
     "data-toggle": "tooltip",
     "data-placement": "bottom"
@@ -210,24 +215,28 @@ function init() {
     "data-placement": "right"
   });
   $('[data-toggle="tooltip"]').tooltip();
-  //解决 typecho 给文章图片加<p>元素导致排版问题，并修复图片下一行的文字的排版问题
+
+
+    if ($("#post").length != 0 || $("#page").length != 0) {
+  $(".comment-list").addClass("list-group list-group-flush");
+  $("#comments p").addClass("mb-1");
+  $(".children").addClass("offset-1 offset-md-1 offset-lg-1");
   $(".post-content img").addClass('img-thumbnail shadow-sm').unwrap();
   $('.post-content').contents().filter(function() {
     return this.nodeType == Node.TEXT_NODE;
   }).wrap('<p></p>');
-  //解决 typecho 的表格样式问题
-  $("table").wrap("<div class='table-responsive'></div>");
-  $("table").addClass("table table-hover");
-  $("thead").addClass("thead-light");
-  //适应评论区的样式表
-  $(".comment-list").addClass("list-group list-group-flush");
-  $("#comments p").addClass("mb-1");
+    $(".post-tag a").addClass("border border-primary rounded");
+    ifnotoc();
+    if ($("table").length > 0) {
+      $("table").wrap("<div class='table-responsive'></div>");
+      $("table").addClass("table table-hover");
+      $("thead").addClass("thead-light");
+    }
+}
+
   $(".navbar").headroom();
-  //自定义标签样式
-  $(".post-tag a").addClass("border border-primary rounded");
   bg();
   inview();
   lazyload();
-  ifnotoc();
   $("#loading").fadeOut(600);
 }

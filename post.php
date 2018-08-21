@@ -2,15 +2,11 @@
 <?php $this->need('header.php'); ?>
 <div class="container-fluid" id="post">
 	<div class="row">
-		<div class="col-md-2 col-xl-2 mt-3 offset-lg-1">
-			<nav id="toc"  class="tocs text-right d-none d-sm-block sticky-top" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
-			<div class="scrolltop d-none d-sm-block sticky-top text-center">
-				<button type="button" class="btn btn-outline-dark" id="scroll-top"><span>▲ Top</span> </button>
-			</div>
+		<div class="col-md-2 col-xl-2 mt-3 offset-lg-1" id="post-left">
+			<nav id="toc"  class="tocs text-right d-none d-sm-block" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
 		</div>
 
-	<div class="col-md-10 col-xl-8 col-12">
-    <section>
+<section class="col-md-10 col-xl-8 col-12">
 		<div class="post-content mx-2" temprop="articleBody">
             <?php $this->content(); ?>
         </div>
@@ -21,6 +17,10 @@
 	</section>
 	</div>
 </div>
+	</div>
+
+	<div class="scrolltop d-none d-sm-block text-center">
+		<button type="button" class="btn btn-outline-dark" id="scroll-top"><span>▲ Top</span> </button>
 	</div>
 
 	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" id="lightbox" aria-labelledby="myLargeModalLabel" aria-hidden="true">

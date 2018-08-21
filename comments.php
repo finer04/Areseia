@@ -3,7 +3,7 @@
     $cl = $comments->levels > 0 ? 'comment-children' : '';
     $author = $comments->url ? '<a href="' . $comments->url . '"'.'" target="_blank"' . ' rel="external">' . $comments->author . '</a>' : $comments->author;
 ?>
-<div id="li-<?php $comments->theId();?>" class="<?php echo $cl;?> card border-secondary mb-2 border-light shadow-sm mb-5 bg-white rounded " style="max-width:53rem;">
+<div id="li-<?php $comments->theId();?>" class="<?php echo $cl;?> card border-secondary mb-2 border-light shadow-sm mb-5 bg-white rounded " >
   <div id="<?php $comments->theId(); ?>" class="card-header d-flex w-100 justify-content-between">
 
     <div class="lead w-50"><?php $a = 'https://cdn.v2ex.com/gravatar/' . md5(strtolower($comments->mail)) . '?s=80&r=X&d=mm';?>
@@ -11,7 +11,7 @@
     <span><small><?php echo $author ?> </small></span>
     <span class="lead blockquote-footer"><small> <?php $comments->date(); ?></small></span>
   </div>
-	<span class="small" style="margin: 1rem;"><?php $comments->reply(); ?></span>
+	<span class="small" style="margin: 0.5rem;"><?php $comments->reply(); ?></span>
   </div>
 
 <div class="card-body">

@@ -7,7 +7,7 @@ html {
 }
 
 body {
-      padding-right: 0px !important;
+  padding-right: 0px !important;
 }
 
 * {
@@ -94,7 +94,6 @@ h1, h2, h3 {
   background-attachment: fixed;
 }
 
-
 .col-center-block {
   float: none;
   display: block;
@@ -154,7 +153,7 @@ h1, h2, h3 {
 }
 
 .post-meta .date {
-  font-size:13px;
+  font-size: 13px;
   color: #C7C7C7;
 }
 
@@ -240,15 +239,18 @@ pre:after {
 }
 
 .scrolltop {
-  visibility: hidden;
-  top: 38rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
   text-align: left;
   padding-right: 0 !important;
   margin-right: 0 !important;
 }
 
+
 .scrolltop button {
-  opacity: 0.2;
+  display: none;
+  opacity: 0.3;
   transition: all 0.1s ease;
   backface-visibility: hidden;
 }
@@ -311,13 +313,11 @@ pre code {
 }
 
 .children {
-  padding-left:5rem;
-  padding-right:3rem;
-  max-width:55rem;
+  max-width: 80%;
 }
 
 .card-header {
-      padding: .25rem 0rem 0.1rem .5rem;
+  padding: .25rem 0rem 0.1rem .5rem;
 }
 
 #comments h4 {
@@ -368,18 +368,16 @@ pre code {
     white-space: normal;
     word-break: break-all;
   }
-
-  .img-box img{
-  	width:100%;
-  	margin:auto;
+  .img-box img {
+    width: 100%;
+    margin: auto;
   }
 }
 
 *.modal-open {
-		overflow: visible;
-		padding-right: 0 !important;
-	}
-
+  overflow: visible;
+  padding-right: 0 !important;
+}
 
 #lightbox {
   overflow-y: hidden;
@@ -395,17 +393,17 @@ pre code {
 }
 
 .modal-body {
-    max-height: calc(100vh - 210px);
-    overflow-y: auto;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
 }
 
-.img-box img{
-	top:0;
-	bottom:0;
-	left:0;
-	right:0;
-	width:100%;
-	margin:auto;
+.img-box img {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  margin: auto;
 }
 
 #loading {
@@ -418,7 +416,7 @@ pre code {
   z-index: 99999
 }
 
-.list .post-meta, .list h2, .list .article,.list .mobile-date {
+.list .post-meta, .list h2, .list .article, .list .mobile-date {
   opacity: 0;
 }
 
@@ -477,15 +475,46 @@ nav[data-toggle=toc] .nav-link.active+ul {
   display: block
 }
 
-
-@media (min-width: 1200px){
-.offset-xl-right-1 {
+@media (min-width: 1200px) {
+  .offset-xl-right-1 {
     margin-right: 8.333333%;
-}
+  }
 }
 
-@media (min-width: 2560px){
-#banner {
+@media (min-width: 2560px) {
+  #banner {
     padding: 25rem 0;
+  }
 }
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s;
+  -moz-animation: fadeIn 1s;
+  -webkit-animation: fadeIn 1s;
+  -o-animation: fadeIn 1s;
+}
+
+.fadeOut {
+  animation: fadeOut 1s;
+  -moz-animation: fadeOut 1s;
+  -webkit-animation: fadeOut 1s;
+  -o-animation: fadeOut 1s;
 }
