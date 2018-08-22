@@ -13,7 +13,7 @@
 
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js" data-no-instant></script>
 <script src="<?php $this->options->themeUrl('js/optimized.js'); ?>"></script>
-<script src="<?php $this->options->themeUrl('js/app.min.js'); ?>"></script>
+<script src="<?php $this->options->themeUrl('js/app.js'); ?>"></script>
 
 <?php if($this->options->usesmooth){ ?>
    <script src="https://cdn.bootcss.com/smoothscroll/1.4.6/SmoothScroll.min.js"></script>

@@ -171,7 +171,8 @@ function ifnotoc() {
   if (h1 == 0 && h2 == 0) {
     if ($("#post").length != 0 || $("#page").length != 0) {
       $("#post-left").remove();
-      $('.post-content section').attr('class', 'container');
+      $('#post , #page').attr('class', 'container');
+      $("section").removeClass("col-md-8").addClass("col-md-12");
     }
   }
 }

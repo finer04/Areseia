@@ -25,7 +25,7 @@
 
 <body <?php if ( $this->is('post') ) echo ' data-spy="scroll" data-target="#toc" ' ?> >
 <div id="loading" ></div>
-<div id="page">
+<div id="app">
 
 	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation">
 		<div class="container-fluid">
