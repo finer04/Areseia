@@ -3,7 +3,7 @@
 <div class="container-fluid" id="post">
 	<div class="row">
 		<div class="col-md-2 col-xl-2 mt-3 offset-lg-1" id="post-left">
-			<nav id="toc"  class="tocs text-right d-none d-sm-block" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
+			<nav id="toc"  class="tocs text-right d-none d-sm-block sticky-top" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
 		</div>
 
 <section class="col-md-8 col-12">

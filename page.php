@@ -6,7 +6,7 @@
 			<nav id="toc"  class="tocs text-right d-none d-sm-block sticky-top" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
 		</div>
 
-	<div class="col-md-10 col-xl-8 col-12">
+	<div class="col-md-8 col-12">
     <section>
 		<div class="post-content mx-2" temprop="articleBody">
             <?php $this->content(); ?>
