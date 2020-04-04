@@ -16,7 +16,7 @@
         ), '', ' - '); ?><?php $this->options->title(); ?></title>
 
 <!-- 引入前端资源 -->
-	<link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="<?php $this->options->themeUrl('css/bootstrap.min.css'); ?>" rel="stylesheet">
 	<link href="<?php $this->options->themeUrl('css/app.css'); ?>" rel="stylesheet">
 
 <!-- 导航栏 -->
@@ -27,14 +27,14 @@
 <div id="loading" ></div>
 <div id="app">
 
-	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top" role="navigation">
+	 <nav id="nav-menu" class="navbar navbar-expand-md navbar-dark fixed-top noselect" role="navigation">
 		<div class="container-fluid">
 		<a title="" class="navbar-brand offset-xl-1" href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title() ?></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" >
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse offset-xl-right-1" id="navbarResponsive">
-        <ul id="menu" class="navbar-nav ml-auto">
+        <ul id="menu" class="navbar-nav ml-auto ">
             <li class="nav-item active<?php if($this->is('index')): ?> <?php endif; ?>"> <a class="nav-link" href="<?php $this->options->siteUrl(); ?>"><?php _e('首页'); ?></a></li>
             <?php $this->widget('Widget_Metas_Category_List')->to($category); ?>
             <?php while($category->next()): ?>
@@ -48,19 +48,19 @@
 
 	<?php if ( $this->is('post') || $this->is('page') ) : ?>
 		<?php if (array_key_exists('img',unserialize($this->___fields()))): ?>
-	<header id="banner" class="shadow-sm" style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php $this->fields->img(); ?>);">
+	<header id="banner" class="shadow-sm" style="background-position: left center ; background-image: url(<?php $this->fields->img(); ?>);">
 		<?php else: ?>
-		<header id="banner" class="shadow"  style="background-position:center; background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15)),url(<?php showThumbnail($this); ?>);">
+		<header id="banner" class="shadow"  style="background-position: left center ; background-image: url(<?php showThumbnail($this); ?>);">
 		<?php endif;?>
 			<div class="container">
 			<div class="row">
-			  <div class=" col-md-8 post-header-meta">
+			  <div class=" col-md-8 post-header-meta noselect">
 				<h1 class="display-3" data-toc-skip><?php $this->title() ?></h1>
 				 <div class="header-meta">
 				 <span><?php echo $this->author->gravatar(32);?></span>
 				 <span><?php $this->author(); ?></span>
 				 <span class="lead"> <time data-toggle="tooltip" data-placement="bottom" title="Last Update: <?php echo date('F j, Y', $this->modified);?>"><?php $this->date('F j, Y'); ?></time></span>
-				 <span class="lead"><?php echo art_count($this->cid); ?> 字</span>
+				 <span class="lead" id="zishu"><?php echo art_count($this->cid); ?> 字</span>
 				  </div>
 			</div>
 		</div>

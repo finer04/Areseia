@@ -7,8 +7,8 @@ $this->need('header.php');
     <section class="container-fluid">
         
 		<div class="col-md-12 text-center">
-			<img src="https://finer04-cos.b0.upaiyun.com/2018/05/783034776.png" class="rounded-circle">
-			<h1 style="margin-top:1rem;">哇(PД`q。)•。'゜ ，走错地方了呀！</h1>
+			<img src="http://i0.hdslb.com/bfs/archive/8350856591f71d1d1b51ae9e0be87378ae5b53fa.jpg" class="rounded">
+			<h1 style="margin-top:1rem;">ないです</h1>
 			<br>
 			<div class="backhome text-center">
 				<a href="<?php $this->options->siteUrl(); ?>">回到首页</a>

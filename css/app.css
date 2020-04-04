@@ -5,7 +5,6 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%
 }
-
 body {
   padding-right: 0px !important;
 }
@@ -17,6 +16,15 @@ body {
 h1, h2, h3 {
   white-space: normal;
   word-break: break-all;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 ::-webkit-scrollbar-thumb:horizontal {
@@ -53,6 +61,7 @@ h1, h2, h3 {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 40;
 }
 
 .post-header-meta h1 {
@@ -84,11 +93,9 @@ h1, h2, h3 {
 
 #banner {
   padding-bottom: 33rem;
-  background-image: -webkit-linear-gradient(top, rgba(23, 24, 32, 0.15), rgba(23, 24, 32, 0.15));
   background-size: 110%;
   top: 0;
   width: 100%;
-  background-position: top center;
   position: relative;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -111,6 +118,10 @@ h1, h2, h3 {
 
 .list a {
   color: #504f4f;
+}
+
+.copyright {
+  height: 80px;
 }
 
 .list a:hover {
@@ -172,7 +183,8 @@ blockquote p {
 }
 
 .post-content img {
-  margin: 1rem 0;
+  margin-bottom: 0.8rem;
+  margin-left:1rem;
 }
 
 .post-content p {
@@ -188,7 +200,7 @@ blockquote p {
   margin: 0.5em 0;
 }
 
-.post-content p, .post-content dd, .post-content ul, .post-content ol, .post-content pre, .post-content li {
+.post-content p, .post-content dd, .post-content ul, .post-content ol, .post-content pre {
   margin: 0 0 10px;
   text-align: justify;
   text-justify: inter-ideograph;
@@ -286,7 +298,7 @@ pre code {
 }
 
 .post-tag {
-  margin-top: 30px;
+  margin: 1.5rem;
 }
 
 .post-tag a {
@@ -313,7 +325,7 @@ pre code {
 }
 
 .children {
-  max-width: 80%;
+  max-width: 100%;
 }
 
 .card-header {
@@ -360,11 +372,14 @@ pre code {
 
 @media (max-width:768px) {
   #banner {
-    padding-bottom: 76.5%;
-    background-position: top left !important;
+    padding-bottom: 80%;
   }
+
+  #zishu {
+    display: none;
+}
   .post-header-meta h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     white-space: normal;
     word-break: break-all;
   }
@@ -416,8 +431,29 @@ pre code {
   z-index: 99999
 }
 
+#gongan::before {
+    content: " ";
+    height: 20px;
+    width: 20px;
+    padding-right:20px;
+    margin-right:3px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAR4SURBVDhPfZRrbFNlGMd/pz09623rtnbr1m7AhkM2FBkD5TIvDEEiEoGoCdNoiEYTQ2JQv2CiiRqYJhpJjAaimIgfZBLRgCMRpxIwRBCGXDZAGDDYuq7behm9nPa0Pb7damDe/l/Oed/zf3/nOc/znEfShfg/ZXwc2dNBIpZgaetqUKbkH/y7/gMYZejk93zzSTuMnqBPcyK7nNQ6JdQhC2s2rKNi7grhs0/Yb5Ehf52kzg/Ws2j+26SSV5jjdrHRHuFVi4+lK6bherCW5qY2fninNe/+m3IRTtLVbXpL/Sr9wzdbde31u/TTmPQzd0/VL6yeqXfl7LuW6O37P9YfuGOVro/szR+6qUkRBg48y6yGXZQ3eNhQdoazOwcxVZWgq2lI6cilRXS2/sITVYepXb6YBTM2kzi+hXQylCdM+uQoX/5eSk+8hbVLosS6Yih9o2gVZuSRFPHO6xhvd2LLagTfO8Zzj8HR4EK27h9GlvMIoXFgJp2Bs21IsiJWCYojPsJ9GhJG5MEE1NoxL6hA749hEY7RP+J4XClxlyWuiZ3kdznMuMaBkYHf4MReSoutYqUgVXlxL3WTJEW4pRyemY7j/fnYX5uLrlhxLypDi0SFV8LjNkPvLtTYmRxqAqglovijOjO8qvCU8O0hK/LDXgKPTEe6fAND1yiRr3vJ9ASxvLuYorea+Wz7gDhpZt6dJqIXR1B9gznUBFC92MFYsIDZ0+I45xXw0Q4DBzd1c8991RRbzYRPBcGfInZ8hJLBEOdeOULbpzasM6bQNDVM8LrG2KWDN4HpVJxIJIO59zRPrZXETgnZjn4cnx9Fnm4nWWlEr7BQ+Wg17n3dhLd3C4/M00+aMITOEQnLmB1aDjUBLKq5H2eDA2pqeeFeEXqxl6000XFJIfLVKRzdIdT286iH++muquELZoqTTp5vvipSPo2SRi9W7/Jx4HjBs1qcZEDjmshR/Wxo21LBpheb2ZdsFBXM0pK8RpnFSHtHiXDn6lzEy5sUGmf2MnAyRToSIh3vFfvLJoCZdA96qZd4f5qBgS42LrPw+DEHHbv7OM88Vs/N4rEH0XdPIREIUTPbweY1vQwduISqKphcBUj2ieYeHw56dozBznWoflGgQEpU1kf9+nooF22UFf3mV4kFYtjqXHCbB/p8XNnZQ7ywkqI6mQKPFWfjDoxK4c1po6My2vUS6bEgQz/5EM/wPNRAcjg23nOGwiJsoucMioL/xx7SWRuuhbVkxMRxzXkDo5xLRb4oOelZiVifDYPFTPXKOhyzqsmEIkjWAkzlpdhKjaRGYwSOXMReV4l7Wb0IPkHi8hCZZDhPuQWoDu8RPaihOMsZGzYgiRekNJmkX5gzYg4KWKjbj9FsEmkwkLo2IH5Vo4jSgp4ScyivSQM22v8z0QvbkJIRClylYiNKKpoEUwF6PI6xzIkkeJl4DN1SiLmqSfTfSpSieqRc+wr9Y2LnVqNnfyV4+RB2MVjTYRXZfANF/DEJrRyLy4HNcw9ZpVqkoTJ/6i/BnywT9tdpeVruAAAAAElFTkSuQmCC");
+}
+
+.footnotes ol{
+    margin-top: 1rem;
+}
+
 .list .post-meta, .list h2, .list .article, .list .mobile-date {
   opacity: 0;
+}
+
+.footnote-ref::before {
+    content: "[";
+}
+
+.footnote-ref::after {
+    content: "]";
 }
 
 .list p {
@@ -517,4 +553,37 @@ nav[data-toggle=toc] .nav-link.active+ul {
   -moz-animation: fadeOut 1s;
   -webkit-animation: fadeOut 1s;
   -o-animation: fadeOut 1s;
+}
+
+
+#banner::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 33;
+    width: 100%;
+    height: 100%;
+    animation: darktolight 1s 0.5s ease-out forwards;
+}
+
+@keyframes darktolight {
+  from {
+    background: rgba(23, 24, 32, 0.00);
+  }
+
+  to {
+    background: rgba(23, 24, 32, 0.20);
+  }
+}
+
+@-webkit-keyframes zoomInDown {
+  from {
+    background: rgba(23, 24, 32, 0.00);
+  }
+
+  to {
+    background: rgba(23, 24, 32, 0.20);
+  }
+ 
 }

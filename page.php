@@ -1,26 +1,21 @@
 <?php if (!defined('__TYPECHO_ROOT_DIR__')) exit; ?>
 <?php $this->need('header.php'); ?>
-<div class="container-fluid" id="page">
+<div class="container" id="page">
 	<div class="row">
-		<div class="col-md-2 col-xl-2 mt-3 offset-lg-1">
-			<nav id="toc"  class="tocs text-right d-none d-sm-block sticky-top" data-toggle="toc" ><p class="lead">文章目录：</p></nav>
-		</div>
 
-	<div class="col-md-8 col-12">
-    <section>
+<section class="col-md-12 col-12">
 		<div class="post-content mx-2" temprop="articleBody">
             <?php $this->content(); ?>
         </div>
 	<div class="col-sm-10 post-tag">
 		<?php $this->tags('', true, ''); ?>
 		</div>
-	<?php $this->need('comments.php'); ?>
+	<?php /* $this->need('comments.php'); */ ?>
 	</section>
 	</div>
-</div>
 	</div>
 
-	<div class="scrolltop d-none d-sm-block sticky-top text-center">
+	<div class="scrolltop d-none d-sm-block text-center">
 		<button type="button" class="btn btn-outline-dark" id="scroll-top"><span>▲ Top</span> </button>
 	</div>
 

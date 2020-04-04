@@ -117,6 +117,7 @@ function inview() {
       queue: false
     }).removeClass('ani');
     $(this).off();
+$("article").removeClass("ani");
   });
 }
 
@@ -205,7 +206,8 @@ function init() {
   var pageination = $(".pagination a");
   pageination.wrap("<li class='page-item'></li>");
   pageination.addClass("page-link");
-
+  $(".activenumber").parent().addClass('active');
+$(".pagination").find("span").wrap("<li class='page-item'></li>").addClass("page-link");
 
   $("img").addClass("img-fluid").attr({
     "data-toggle": "tooltip",
@@ -219,9 +221,12 @@ function init() {
 
 
     if ($("#post").length != 0 || $("#page").length != 0) {
+  $(".footnotes").addClass("font-weight-light my-4");
+  $(".footnotes ol").before('<h5>参考资料/脚注</h5>');
+  $(".footnotes").find('hr').remove();
   $(".comment-list").addClass("list-group list-group-flush");
   $("#comments p").addClass("mb-1");
-  $(".children").addClass("offset-1 offset-md-1 offset-lg-1");
+  $(".children").addClass("mx-2");
   $(".post-content img").addClass('img-thumbnail shadow-sm').unwrap();
   $('.post-content').contents().filter(function() {
     return this.nodeType == Node.TEXT_NODE;

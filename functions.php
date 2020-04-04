@@ -18,6 +18,12 @@ function themeConfig($form) {
         $tongji = new Typecho_Widget_Helper_Form_Element_Textarea('tongji', NULL, NULL, _t('统计代码'), _t('请输入你的统计代码，或者其他 Javascript 代码'));
         $form->addInput($tongji);
 
+    $icpbeian= new Typecho_Widget_Helper_Form_Element_Text('icpbeian', NULL, NULL, _t('ICP 网站备案许可证号'), _t('输入您的网站备案号'));
+        $form->addInput($icpbeian);
+        
+    $gonganbeian= new Typecho_Widget_Helper_Form_Element_Text('gonganbeian', NULL, NULL, _t('公安备案号'), _t('输入您的网站备案号'));
+    $form->addInput($gonganbeian);
+
 
 }
 
@@ -27,6 +33,18 @@ function themeInit($archive)
         $archive->content = preg_replace('#<img(.*?) src="(.*?)" (.*?)>#',
         '<img$1 data-original="$2" class="lazy" $3>', $archive->content);
     }
+}
+
+function fenleinum($id){
+$db = Typecho_Db::get();
+$po=$db->select('table.metas.count')->from ('table.metas')->where ('parent = ?', $id)->orWhere('mid = ? ', $id);
+$pom = $db->fetchAll($po);
+$num = count($pom);
+$shu = 0;
+for ($x=0; $x<$num; $x++) {
+$shu=$pom[$x]['count']+$shu;
+}
+echo $shu;
 }
 
 function art_count($cid){
