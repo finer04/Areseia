@@ -11,7 +11,7 @@
 
 <?php if($this->options->icpbeian){ ?>
     <a class="text-muted" href="http://beian.miit.gov.cn" target="_blank" rel="nofollow noopener noreferrer"> <?php $this->options->icpbeian(); ?> /</a>
-    <a target="_blank" id="gongan" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=44060602001433" class="text-muted"><?php $this->options->gonganbeian(); ?></a>
+    <a target="_blank" id="gongan" href="http://www.beian.gov.cn/portal/registerSystemInfo" class="text-muted"><?php $this->options->gonganbeian(); ?></a>
 <?php }  ?>  
 
 </p>
